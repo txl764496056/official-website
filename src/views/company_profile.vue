@@ -8,7 +8,7 @@ export default {
     name:"company_profile",
     data:function(){
         return {
-
+            
         }
     }
 }
