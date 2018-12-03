@@ -1,103 +1,26 @@
 <template>
-    <div id="navbar" class="navbar wow animated fadeInUp">
+    <div id="navbar" @mouseleave="foldNav" class="navbar wow animated fadeInUp">
 		<div class="container  clear">
 			<div class="logo fl">
 				<img class="fl" src="../assets/logo.png" alt="" />
-				<p class="com-name fr">武汉星梦时代</p>
+				<p class="com-name fr">{{companyMsg.name}}</p>
 			</div>
 			<ul id="navbar-nav" class="fr">
-                <li v-for="(item,index) in navList" :key="index" @click="navClick" :class="{'active':activeIndex==index}">
-                    <router-link :data-nav="item.name" :data-index="index" to="item.url">{{item.name}}</router-link>
+                <li v-for="(item,index) in navList" :key="index" @click="navClick" @mouseover="navbarMover" :class="{'active':activeIndex==index}">
+                    <router-link :data-nav="item.name" :data-index="index" :data-key="item.key"  to="item.url">{{item.name}}</router-link>
                 </li>
 			</ul>
 		</div>
 		<div class="navbar-nav-list">
 			<div class="container">
-				<!-- 首页 子菜单 -->
-				<!-- <ul class="nav-list hid nav-list0"></ul> -->
-				<!-- 企业简介 子菜单 -->
-				<!-- <ul class="nav-list hid nav-list1">
-					<li>
-						<a href="company_culture.html">
-							<img src="../assets/home_img/nav_culture.png" alt="">
-							<p>企业文化</p>
-						</a>
-					</li>
-					<li>
-						<a href="industrial_distribution.html">
-							<img src="img/home_img/nav_Industrial.png" alt="">
-							<p>产业布局</p>
-						</a>
-					</li>
-					<li>
-						<a href="certificate_honor.html">
-							<img src="img/home_img/nav_my.png" alt="">
-							<p>荣誉证书</p>
-						</a>
-					</li>
-					<li>
-						<a href="corporate_announcements.html">
-							<img src="img/home_img/nav_affiche.png" alt="">
-							<p>企业公告</p>
-						</a>
-					</li>
-				</ul> -->
-                <ul class="nav-list hid nav-list1">
-                    <li v-for="(item,index) in navProfileList" :key="index">
+                <ul class="nav-list hid" v-if="submenu">
+                    <li v-for="(item,index) in submenu" :key="index">
                         <router-link to="item.url">
-                            <img src="item.img" alt="">
+                            <img :src="item.img" alt="">
                             <p>{{item.name}}</p>
                         </router-link>
                     </li>
                 </ul>
-				<!-- 产品中心 子菜单 -->
-				<ul class="nav-list hid nav-list2">
-					<li>
-						<a href="product_center.html">
-							<img src="img/home_img/nav_find.png" alt="">
-							<p>发现</p>
-						</a>
-					</li>
-					<li>
-						<a href="product_center.html">
-							<img src="img/home_img/nav_chat.png" alt="">
-							<p>汇聊</p>
-						</a>
-					</li>
-					<li>
-						<a href="product_center.html">
-							<img src="img/home_img/nav_call.png" alt="">
-							<p>通讯</p>
-						</a>
-					</li>
-					<li>
-						<a href="product_center.html">
-							<img src="img/home_img/nav_live.png" alt="">
-							<p>直播</p>
-						</a>
-					</li>
-					<li>
-						<a href="product_center.html">
-							<img src="img/home_img/nav_my.png" alt="">
-							<p>我的</p>
-						</a>
-					</li>
-				</ul>
-				<!-- 新闻资讯 子菜单 -->
-				<!-- <ul class="nav-list hid nav-list3"></ul> -->
-				<!-- 商城 子菜单 -->
-				<!-- <ul class="nav-list hid nav-list4"></ul> -->
-				<!-- 客户端下载 子菜单 -->
-				<!-- <ul class="nav-list hid nav-list5"></ul> -->
-				<!-- 联系我们 子菜单 -->
-				<ul class="nav-list hid nav-list6">
-					<li>
-						<a href="employ.html">
-							<img src="img/home_img/nav_recruit.png" alt="">
-							<p>招贤纳士</p>
-						</a>
-					</li>
-				</ul>
 			</div>
 		</div>
     </div>
@@ -109,100 +32,145 @@ export default {
     data:function(){
         return {
             activeIndex:0,
-            navList:[
+            companyMsg:{
+                name: "武汉星梦时代",//公司名称
+            },
+            showSub:false, //二级菜单是否显示，false:不显示，true：显示
+            navList:[ // 导航一级菜单
                 {
-                    name:"首页",
-                    url:"/"
+                    name:"首页", //菜单名
+                    url:"/", //跳转地址
+                    key:"", //对应二级菜单索引值
                 },
                 {
                     name:"企业简介",
-                    url:"/company_profile"
+                    url:"/company_profile",
+                    key:"profile"
                 },
                 {
                     name:"产品中心",
-                    url:"/"
+                    url:"/",
+                    key:"productC"
                 },
                 {
                     name:"商城",
-                    url:"/"
+                    url:"/",
+                    key:""
                 },
                 {
                     name:"新闻资讯",
-                    url:"/"
+                    url:"/",
+                    key:""
                 },
                  {
                     name:"客户端下载",
-                    url:"/"
+                    url:"/",
+                    key:""
                 },
                  {
                     name:"联系我们",
-                    url:"/"
+                    url:"/",
+                    key:"contract"
                 }
             ],
-            navProfileList:[
-                {
-                    name:"企业文化",
-                    img:"../assets/home_img/nav_culture.png",
-                    url:"/"
-                },
-                {
-                    name:"产业布局",
-                    img:"../assets/home_img/nav_Industrial.png",
-                    url:"/"
-                },
-                {
-                    name:"荣誉证书",
-                    img:"../assets/home_img/nav_my.png",
-                    url:"/"
-                },
-                 {
-                    name:"企业公告",
-                    img:"../assets/home_img/nav_affiche.png",
-                    url:"/"
-                }
-            ]
+            submenu:[], //悬停显示的二级菜单
+            submenus:{ //导航二级菜单
+                "profile":[
+                    {
+                        name:"企业文化",
+                        img:"./assets/home_img/nav_culture.png",
+                        url:"/"
+                    },
+                    {
+                        name:"产业布局",
+                        img:"./assets/home_img/nav_Industrial.png",
+                        url:"/"
+                    },
+                    {
+                        name:"荣誉证书",
+                        img:"./assets/home_img/nav_my.png",
+                        url:"/"
+                    },
+                    {
+                        name:"企业公告",
+                        img:"./assets/home_img/nav_affiche.png",
+                        url:"/"
+                    }
+                ],
+                "productC":[
+                    {
+                        name:"发现",
+                        img:"./assets/home_img/nav_find.png",
+                        url:"/"
+                    },
+                    {
+                        name:"汇聊",
+                        img:"./assets/home_img/nav_chat.png",
+                        url:"/"
+                    },
+                    {
+                        name:"通讯",
+                        img:"./assets/home_img/nav_call.png",
+                        url:"/"
+                    },
+                    {
+                        name:"直播",
+                        img:"./assets/home_img/nav_live.png",
+                        url:"/"
+                    },
+                    {
+                        name:"我的",
+                        img:"./assets/home_img/nav_my.png",
+                        url:"/"
+                    }
+                ],
+                "contract":[
+                     {
+                        name:"招贤纳士",
+                        img:"./assets/home_img/nav_recruit.png",
+                        url:"/"
+                    }
+                ]
+            }
         }
     },
     methods:{
         /**
-         * 导航动画
+         * 一级菜单悬停事件，向下滑出二级菜单
+         * 利用promise,先更新二级菜单数据，再下滑展开二级菜单
+         * 同步执行的问题：例如，a,b 2个一级菜单，其中b无二级菜单，也就是二级菜单数据为空
+         *               鼠标操作：移入a -> 移入b -> 移入a，当无二级菜单的b,移入有二级菜单的a时，并不会出现a的二级菜单
+         *               原因：数据更新和下滑展示同步执行，下滑展示的时候，数据更新还没完成
          */
-        navAnimate(){
-            let _this = this;
-            var submenu = $(".navbar-nav-list"); //子菜单容器
-            var str = "ul.nav-list"; //子菜单类名及类名前缀
-            var specMenu;
-            $("#navbar-nav li").hover(function(){
-                var index = $(this).index(); //一级菜单索引
-                specMenu = str+index; //指定子菜单类名
-                var flag = submenu.has(specMenu).length; //判断是否有子菜单
-
-                if(flag!=0){ //有子菜则单展开
-                    $(specMenu).stop().slideDown().siblings().stop().slideUp();
-                }else{
-                    _this._slideUp("ul.nav-list"); //收起所有子菜单
+        navbarMover:function(evt){
+            let key = evt.target.dataset.key;
+            
+            let promise = new Promise((success,fail)=>{
+                success();
+            });
+            promise.then((res)=>{ //跟新二级菜单数据 
+               return new Promise((success,fail)=>{
+                   this.submenu = this.submenus[key];
+                   success(true);
+               });
+            }).then((res)=>{ //二级菜单向下展开
+                if(res){
+                    $(".nav-list").stop().slideDown();
                 }
             });
-
-            $("#navbar").on("mouseleave",function(){
-                _this._slideUp("ul.nav-list"); //离开导航最顶层父元素，收起所有子菜单
-            });
         },
-        /**
-         * 向上折叠隐藏元素 
-         */
-         _slideUp(element){
-	        $(element).stop().slideUp("2000");
-        },
-         getEvent(evt){
-	        return evt||window.event;
+        /** 
+         * 离开导航最顶层父元素，收起所有子菜单
+        */
+        foldNav:function(){
+            $("ul.nav-list").stop().slideUp("2000");
         },
         navClick(evt){
            this.activeIndex = evt.target.dataset.index;
         }
     },
     mounted:function(){
-        this.navAnimate();
+        this.submenu = this.submenus['profile'];
     }
 }
 </script>

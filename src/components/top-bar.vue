@@ -16,7 +16,7 @@ export default {
     data:function(){
         return {
             prompt:"您好，欢迎进入汇能科技！",
-            time:"今天是2018年6月21日&emsp;星期四"
+            time:"今天是2018年6月21日星期四"
         }
     }
 }
