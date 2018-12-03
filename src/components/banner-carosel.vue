@@ -41,7 +41,7 @@ export default {
 }
 </script>
 <style scoped>
-/* @import "../plugins/wowslider/style.css"; */
+@import "../plugins/wowslider/style.css";
 </style>
 
 
