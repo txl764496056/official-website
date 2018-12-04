@@ -35,7 +35,7 @@ export default {
             companyMsg:{
                 name: "武汉星梦时代",//公司名称
             },
-            showSub:false, //二级菜单是否显示，false:不显示，true：显示
+            // showSub:false, //二级菜单是否显示，false:不显示，true：显示
             navList:[ // 导航一级菜单
                 {
                     name:"首页", //菜单名
@@ -143,7 +143,13 @@ export default {
          *               原因：数据更新和下滑展示同步执行，下滑展示的时候，数据更新还没完成
          */
         navbarMover:function(evt){
-            let key = evt.target.dataset.key;
+            let target = evt.target ? evt.target : evt.srcElement;//ie低版本要srcElement,且不支持dataset
+            let key = "";
+            if(evt.target.dataset){
+                key = target.dataset.key;
+            }else{
+                key = target.getAttribute('data-key');
+            }
             
             let promise = new Promise((success,fail)=>{
                 success();
@@ -178,14 +184,14 @@ export default {
 .logo{height:100px;line-height:100px;width:auto;}
 .logo img{width:74px;height: 66px;margin-top:16px;}
 .logo p.com-name{height:100px;line-height:inherit;font-size:26px;;color:#222;margin-left:20px;letter-spacing:3px;}
-#navbar-nav{line-height: 100px;height: 100px;}
+#navbar-nav,#navbar{line-height: 100px;height: 100px;}
 #navbar-nav>li{float:left;position: relative;overflow: hidden;}
 #navbar-nav li a{display: inline-block;min-width: 114px;color:#333;font-size: 18px;text-align:center;position: relative;transition:all 0.6s;}
 #navbar-nav li.active a{background-color:#0099ff;color:#fff;position: relative;}
 #navbar-nav li:hover a{transform: translateY(-100px);}
 #navbar-nav li a:after{content:attr(data-nav);display: inline-block;height: 100%;width: 100%;left: 0;top: 100%;position: absolute;color:#0099ff;}
 #navbar-nav li.active:hover a{transform: translateY(0);}
-.navbar-nav-list{position: relative;width: 100%;background-color: rgba(0,0,0,0.65);}
+.navbar-nav-list{position: relative;width: 100%;background-color: rgba(0,0,0,0.65);z-index:999;}
 .navbar-nav-list .container{text-align: center;position: relative;}
 .navbar-nav-list ul{line-height: normal;padding:20px 0;text-align: left;display: none;}
 .navbar-nav-list ul li{width:188px;margin:10px;line-height: normal;display: inline-block;transition: 0.2s;}
