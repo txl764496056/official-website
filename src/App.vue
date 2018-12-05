@@ -6,20 +6,8 @@
     <navigation-bar></navigation-bar>
     <!-- 轮播 -->
     <banner-carousel>
-      <carousel-item>
-            <img src="./assets/home_img/banner3.jpg" alt="">
-        </carousel-item>
-        <carousel-item>
-            <img src="./assets/home_img/banner1.jpg" alt="">
-        </carousel-item>
-        <carousel-item>
-            <img src="./assets/home_img/banner2.jpg" alt="">
-        </carousel-item>
-        <carousel-item>
-            <img src="./assets/home_img/banner3.jpg" alt="">
-        </carousel-item>
-         <carousel-item>
-            <img src="./assets/home_img/banner1.jpg" alt="">
+        <carousel-item v-for="(item,index) in bannerImg" :key="index">
+            <img :src="item" alt="">
         </carousel-item>
     </banner-carousel>
     <router-view/>
@@ -36,6 +24,11 @@ import carouselItem from "./components/carousel-item" //轮播项
 
 export default {
   name: 'App',
+  data:function(){
+      return {
+        bannerImg:["/static/home_img/banner1.jpg","/static/home_img/banner2.jpg","/static/home_img/banner3.jpg"]
+      }
+  },
   components:{
     "navigation-bar":navigationBar,
     "top-bar":topBar,

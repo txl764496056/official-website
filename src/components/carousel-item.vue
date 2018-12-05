@@ -8,7 +8,7 @@ export default {
     name:"carousel-item",
     data:function(){
         return {
-
+            
         }
     }
 }

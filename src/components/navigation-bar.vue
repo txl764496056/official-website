@@ -2,7 +2,7 @@
     <div id="navbar" @mouseleave="foldNav" class="navbar wow animated fadeInUp">
 		<div class="container  clear">
 			<div class="logo fl">
-				<img class="fl" src="../assets/logo.png" alt="" />
+				<img class="fl" :src="logo" alt="" />
 				<p class="com-name fr">{{companyMsg.name}}</p>
 			</div>
 			<ul id="navbar-nav" class="fr">
@@ -32,10 +32,10 @@ export default {
     data:function(){
         return {
             activeIndex:0,
+            logo:"/static/logo.png",
             companyMsg:{
                 name: "武汉星梦时代",//公司名称
             },
-            // showSub:false, //二级菜单是否显示，false:不显示，true：显示
             navList:[ // 导航一级菜单
                 {
                     name:"首页", //菜单名
@@ -78,56 +78,56 @@ export default {
                 "profile":[
                     {
                         name:"企业文化",
-                        img:"./assets/home_img/nav_culture.png",
+                        img:"/static/home_img/nav_culture.png",
                         url:"/"
                     },
                     {
                         name:"产业布局",
-                        img:"./assets/home_img/nav_Industrial.png",
+                        img:"/static/home_img/nav_Industrial.png",
                         url:"/"
                     },
                     {
                         name:"荣誉证书",
-                        img:"./assets/home_img/nav_my.png",
+                        img:"/static/home_img/nav_my.png",
                         url:"/"
                     },
                     {
                         name:"企业公告",
-                        img:"./assets/home_img/nav_affiche.png",
+                        img:"/static/home_img/nav_affiche.png",
                         url:"/"
                     }
                 ],
                 "productC":[
                     {
                         name:"发现",
-                        img:"./assets/home_img/nav_find.png",
+                        img:"/static/home_img/nav_find.png",
                         url:"/"
                     },
                     {
                         name:"汇聊",
-                        img:"./assets/home_img/nav_chat.png",
+                        img:"/static/home_img/nav_chat.png",
                         url:"/"
                     },
                     {
                         name:"通讯",
-                        img:"./assets/home_img/nav_call.png",
+                        img:"/static/home_img/nav_call.png",
                         url:"/"
                     },
                     {
                         name:"直播",
-                        img:"./assets/home_img/nav_live.png",
+                        img:"/static/home_img/nav_live.png",
                         url:"/"
                     },
                     {
                         name:"我的",
-                        img:"./assets/home_img/nav_my.png",
+                        img:"/static/home_img/nav_my.png",
                         url:"/"
                     }
                 ],
                 "contract":[
                      {
                         name:"招贤纳士",
-                        img:"./assets/home_img/nav_recruit.png",
+                        img:"/static/home_img/nav_recruit.png",
                         url:"/"
                     }
                 ]
