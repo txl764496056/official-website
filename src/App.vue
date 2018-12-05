@@ -5,7 +5,23 @@
     <!-- 导航栏 -->
     <navigation-bar></navigation-bar>
     <!-- 轮播 -->
-    <banner-carosel></banner-carosel>
+    <banner-carousel>
+      <carousel-item>
+            <img src="./assets/home_img/banner3.jpg" alt="">
+        </carousel-item>
+        <carousel-item>
+            <img src="./assets/home_img/banner1.jpg" alt="">
+        </carousel-item>
+        <carousel-item>
+            <img src="./assets/home_img/banner2.jpg" alt="">
+        </carousel-item>
+        <carousel-item>
+            <img src="./assets/home_img/banner3.jpg" alt="">
+        </carousel-item>
+         <carousel-item>
+            <img src="./assets/home_img/banner1.jpg" alt="">
+        </carousel-item>
+    </banner-carousel>
     <router-view/>
        
   </div>
@@ -13,16 +29,18 @@
 
 <script>
 
-import navigationBar from "./components/navigation-bar"
-import topBar from "./components/top-bar"
-import bannerCarosel from "./components/banner-carosel"
+import navigationBar from "./components/navigation-bar" //导航
+import topBar from "./components/top-bar" //顶部导航
+import bannerCarousel from "./components/banner-carousel" //轮播
+import carouselItem from "./components/carousel-item" //轮播项
 
 export default {
   name: 'App',
   components:{
     "navigation-bar":navigationBar,
     "top-bar":topBar,
-    "banner-carosel":bannerCarosel
+    "banner-carousel":bannerCarousel,
+    "carousel-item":carouselItem
   },
   mounted:function(){
   }
