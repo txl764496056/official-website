@@ -1,13 +1,17 @@
 <template>
 	<!-- 自定义轮播动画 -->
-	<div class="carousel">
+	<div class="carousel" @mouseover="stop" @mouseout="play">
 		<div class="carousel-list">
 			<slot></slot>
 		</div>
-		<a href="#" @click="prev" @mouseenter="stop" @mouseout="play">上一个</a>
-		<a href="#" @click="next" @mouseenter="stop" @mouseout="play">下一个</a>
+		<a class="arrow arrow-l" href="#" @click="prev">
+			<i class="iconfont icon-arrowleft1"></i>
+		</a>
+		<a class="arrow arrow-r" href="#" @click="next">
+			<i class="iconfont icon-arrowright"></i>
+		</a>
 		<div class="controls">
-			<a href="#" v-for="(item,index) in itemLen" @mouseenter="stop" @mouseout="play" @click="clickItem" :key="index" :data-index="index" :class="{'active':index==active}"></a>
+			<a href="#" v-for="(item,index) in itemLen" @click="clickItem" :key="index" :data-index="index" :class="{'active':index==active}"></a>
 		</div>
 	</div>
 </template>
@@ -71,7 +75,7 @@ export default {
 		 * 端点判断：
 		 * (1)实现效果：当控制点是最后一个高亮，且点击了下一张按钮，则显示的应该是最第一张图，进行循环
 		 * (2)实现方法：点击按钮后，进行动画，让列表最后一项（图片第一张）显示出来，然后让列表移动（"-100%"）长度，让真正的第一张图（列表第二项）显示出来
-		 *  $(listBox).animate({
+		 *  $(_this.listBox).animate({
 		 *  	"margin-left":"-"+(curr+2)+"00%"
 		 *  },500,function(){
 		 *  	if(curr<len-1){
@@ -86,7 +90,7 @@ export default {
 			let _this = this;
 			let curr = _this.active;
 			let len = _this.itemLen;
-
+			
 			this.switchImg(curr+2,function(obj){
 				if(curr<len-1){
 					_this.active = ++curr; //与 curr++;_this.acitve=curr，效果相同
@@ -150,11 +154,20 @@ export default {
 </script>
 <style scoped>
 /* 自定义轮播动画 */
-.carousel{overflow: hidden;min-width:1200px;position:relative;}
+.carousel{overflow: hidden;min-width:1200px;position:relative;z-index:10}
 .carousel-list{position: relative;font-size:0;width:1000%;font-size:0;margin-left:-100%;}
+/* 左右箭头 */
+.arrow{position:absolute;top:calc(50% - 30px);width:60px;height:60px;background-color:rgba(0,0,0,0.5);color:rgba(255,255,255,0.3);display:inline-block;z-index:99;text-align:center;line-height:54px;border-radius: 50%;display:none;}
+.arrow i{font-size: 40px;}
+.arrow-l{left:30px;}
+.arrow-r{right:30px;}
+.arrow:hover i{color:rgba(255,255,255,0.8)}
+.carousel:hover .arrow{display: inline-block;}
 
-.controls a{width:16px;height:16px;margin:0 5px;display: inline-block;background-color: rgba(0,0,0,0.5)}
-.controls a.active{background-color: rgb(231, 107, 107);}
+/* 控制点 */
+.controls{position:absolute;bottom:10px;left:0;right:0;text-align:center;}
+.controls a{width:12px;height:12px;margin:0 5px;display: inline-block;background-color: rgba(0,0,0,0.5);border-radius: 50%;}
+.controls a.active{background-color: #fff;}
 </style>
 
 

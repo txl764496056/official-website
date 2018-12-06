@@ -12,6 +12,7 @@ import "element-ui/lib/theme-chalk/index.css"
 import App from './App'
 import router from './router'
 
+import './css/animate.min.css'
 import './css/base.css'
 import "./assets/iconfont/iconfont.css"
 
