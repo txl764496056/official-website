@@ -7,7 +7,7 @@
 			</div>
 			<ul id="navbar-nav" class="fr">
                 <li v-for="(item,index) in navList" :key="index" @click="navClick" @mouseover="navbarMover" :class="{'active':activeIndex==index}">
-                    <router-link :data-nav="item.name" :data-index="index" :data-key="item.key"  to="item.url">{{item.name}}</router-link>
+                    <router-link :data-nav="item.name" :data-index="index" :data-key="item.key"  :to="item.url">{{item.name}}</router-link>
                 </li>
 			</ul>
 		</div>
@@ -39,7 +39,7 @@ export default {
             navList:[ // 导航一级菜单
                 {
                     name:"首页", //菜单名
-                    url:"/", //跳转地址
+                    url:"/index", //跳转地址
                     key:"", //对应二级菜单索引值
                 },
                 {
@@ -59,7 +59,7 @@ export default {
                 },
                 {
                     name:"新闻资讯",
-                    url:"/",
+                    url:"/news",
                     key:""
                 },
                  {
