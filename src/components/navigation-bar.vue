@@ -26,7 +26,6 @@
     </div>
 </template>
 <script>
-import $ from "jquery"
 export default {
     name:"navigation-bar",
     data:function(){

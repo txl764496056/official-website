@@ -16,7 +16,6 @@
 	</div>
 </template>
 <script>
-import $ from "jquery"
 export default {
 	name:"banner-carousel",
     data:function(){

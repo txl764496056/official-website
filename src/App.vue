@@ -5,7 +5,7 @@
     <!-- 导航栏 -->
     <navigation-bar></navigation-bar>
     <router-view/>
-       
+       <div></div>
   </div>
 </template>
 
@@ -38,4 +38,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
 </style>

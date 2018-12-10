@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 
-import $ from "jquery"
+
 import "babel-polyfill" //兼容包
 
 // elementui 组件
