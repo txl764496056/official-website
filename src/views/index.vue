@@ -223,13 +223,12 @@ export default {
 
 /* 跑马灯 */
 .partner{padding:70px 0;background-color: #fff;}
-.partner-carousel{width:1200px;margin:0 auto;background-color: transparent;margin-top: 150px;margin-bottom: 90px;overflow:hidden;height:104px;}
+.partner-carousel{width:1200px;margin:0 auto;background-color: transparent;margin-top: 150px;margin-bottom: 90px;overflow:hidden;height:104px;position:relative;}
 .partner-item{width: 240px;height: 104px;text-align: left;display:inline-block;float:left;}
 .partner-item img{width:210px;height: 100%;transition:0.5s;}
 .partner-item:hover img{transform: scale(1.1);}
 .partner-list{height:104px;}
-.partner-arrow{z-index: 99;transform:none;}
-.partner-arrow-r{right:50px;}
+/deep/ .partner-carousel>div:nth-of-type(1){transform:none;left:30px;width:100px;height:100px;border:1px solid #ff0000}
 </style>
 
 
