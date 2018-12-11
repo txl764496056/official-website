@@ -15,7 +15,7 @@
 			<div class="container">
                 <ul class="nav-list hid" v-if="submenu">
                     <li v-for="(item,index) in submenu" :key="index">
-                        <router-link to="item.url">
+                        <router-link :to="item.url">
                             <img :src="item.img" alt="">
                             <p>{{item.name}}</p>
                         </router-link>
@@ -48,7 +48,7 @@ export default {
                 },
                 {
                     name:"产品中心",
-                    url:"/",
+                    url:"/product_center",
                     key:"productC"
                 },
                 {

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import CompanyProfile from '@/views/company_profile' //企业简介
 import Index from '@/views/index' //首页
+import News from '@/views/News' //新闻
 
 Vue.use(Router)
 
@@ -26,6 +27,11 @@ export default new Router({
     {
       path:"/",
       redirect:"/index"
-    }
+    },
+    {
+      path:"/news",
+      name:"news",
+      component:News
+    },
   ]
 })

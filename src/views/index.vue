@@ -223,12 +223,20 @@ export default {
 
 /* 跑马灯 */
 .partner{padding:70px 0;background-color: #fff;}
-.partner-carousel{width:1200px;margin:0 auto;background-color: transparent;margin-top: 150px;margin-bottom: 90px;overflow:hidden;height:104px;position:relative;}
+.partner-carousel{width:1200px;margin:0 auto;background-color: transparent;margin-top: 130px;margin-bottom: 90px;overflow:hidden;height:104px;position:relative;z-index:10;}
 .partner-item{width: 240px;height: 104px;text-align: left;display:inline-block;float:left;}
 .partner-item img{width:210px;height: 100%;transition:0.5s;}
 .partner-item:hover img{transform: scale(1.1);}
 .partner-list{height:104px;}
-/deep/ .partner-carousel>div:nth-of-type(1){transform:none;left:30px;width:100px;height:100px;border:1px solid #ff0000}
+/deep/ .partner-carousel>div:nth-of-type(1),/deep/ .partner-carousel>div:nth-of-type(2){display:none;}
+// 跑马灯左右控制器
+// /deep/ .partner-carousel>div:nth-of-type(1),/deep/ .partner-carousel>div:nth-of-type(2){transform:none;z-index:999;}
+// /deep/ .partner-carousel>div:nth-of-type(1){left:30px;}
+// /deep/ .partner-carousel>div:nth-of-type(2){right:30px;}
+// .partner-carousel>div>i{font-size:40px;color:rgba(0,0,0,0.5);display:none;}
+// .partner-carousel:hover>div>i{display:inline-block;}
+// .partner-carousel>div>i:hover{color:rgba(0,0,0,0.6)}
+// /deep/ .partner-carousel>div:nth-of-type(3){z-index:100;}
 </style>
 
 

@@ -5,7 +5,7 @@
     <!-- 导航栏 -->
     <navigation-bar></navigation-bar>
     <router-view/>
-       <div></div>
+    <bottom-footer></bottom-footer>
   </div>
 </template>
 
@@ -13,6 +13,7 @@
 
 import navigationBar from "./components/navigation-bar" //导航
 import topBar from "./components/top-bar" //顶部导航
+import bottomFooter from "./components/bottom-footer" //底部
 
 export default {
   name: 'App',
@@ -23,7 +24,8 @@ export default {
   },
   components:{
     "navigation-bar":navigationBar,
-    "top-bar":topBar
+    "top-bar":topBar,
+    "bottom-footer":bottomFooter
   },
   mounted:function(){
   }
