@@ -8,8 +8,8 @@
             <p>{{itemMsg.content}}</p>
         </div>
         <div class="item-time">
-            <p>{{itemMsg.day}}</p>
-            <span>{{itemMsg.year}}-{{getMonth}}</span>
+            <p>{{day}}</p>
+            <span>{{year}}-{{getMonth}}</span>
         </div>
     </div>
 </template>
@@ -22,20 +22,33 @@ export default {
                     imgSrc:"",
                     title:"标题",
                     content:"内容内容内容内容内容内容内容内容",
-                    year:"2018",
-                    month:"6",
-                    day:"25"
+                    time:"2013-06-4 0:0:0"
                 }
             }
         }
     },
     data:function(){
         return {
+            year:"2011",
+            month:"8",
+            day:"12"
+        }
+    },
+    created:function(){
+        this.getDate();
+    },
+    methods:{
+        getDate:function(){
+            let time = this.itemMsg.time;
+            time = time.split("-");
+            this.year = time[0];
+            this.month = time[1]
+            this.day = time[2].split(" ")[0];
         }
     },
     computed:{
         getMonth:function(){
-            let month = this.itemMsg.month;
+            let month = this.month;
             month = Number.parseInt(month);
             return month<10 ? "0"+month:month;
         }

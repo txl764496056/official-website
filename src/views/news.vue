@@ -14,9 +14,23 @@
             </div>
         </div>
         <!-- 列表 end -->
+        <!-- 分页 start -->
+        <!-- <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="4"
+            :page-count="30"
+            :page-size="100"
+            layout="total, prev, pager, next"
+            :total="400"
+            prev-text="上一页"
+            next-text="下一页">
+        </el-pagination> -->
+        <!-- 分页 end -->
     </div>
 </template>
 <script>
+import axios from "axios"
 import pageBanner from '../components/page-banner' //banner
 import newsListItem from '../components/news-list-item' //新闻列表项
 export default {
@@ -27,32 +41,23 @@ export default {
     data:function(){
         return{
             bannerContent:"整理并实时更新最核心最需要的公司新闻资讯",
-            newsList:[
-                {
-                    imgSrc:"/static/home_img/a2.png",
-                    title:"潘石屹：SOHO3Q不走并购路线 明年独立上市",
-                    content:"潘石屹表示，在城市拓展中也遇到一些问题，推进进度没有想象中的快。离开了背景、上海，我们发现不合法的项目很多。潘石屹透露，没有竣工验收备案或没有房产证的项目在SOH3Q洽谈的项目中占比约80%，SOHO3Q页已经转变了目标租户的定位，成立之初它走的是解决创业企业办公问题的路线，单但它更在意公司规模在50-300人之间的公司。",
-                    year:"2018",
-                    month:"6",
-                    day:"25"
-                },
-                {
-                    imgSrc:"/static/home_img/a2.png",
-                    title:"潘石屹：SOHO3Q不走并购路线 明年独立上市",
-                    content:"潘石屹表示，在城市拓展中也遇到一些问题，推进进度没有想象中的快。离开了背景、上海，我们发现不合法的项目很多。潘石屹透露，没有竣工验收备案或没有房产证的项目在SOH3Q洽谈的项目中占比约80%，SOHO3Q页已经转变了目标租户的定位，成立之初它走的是解决创业企业办公问题的路线，单但它更在意公司规模在50-300人之间的公司。",
-                    year:"2018",
-                    month:"6",
-                    day:"25"
-                },
-                {
-                    imgSrc:"/static/home_img/a2.png",
-                    title:"潘石屹：SOHO3Q不走并购路线 明年独立上市",
-                    content:"潘石屹表示，在城市拓展中也遇到一些问题，推进进度没有想象中的快。离开了背景、上海，我们发现不合法的项目很多。潘石屹透露，没有竣工验收备案或没有房产证的项目在SOH3Q洽谈的项目中占比约80%，SOHO3Q页已经转变了目标租户的定位，成立之初它走的是解决创业企业办公问题的路线，单但它更在意公司规模在50-300人之间的公司。",
-                    year:"2018",
-                    month:"6",
-                    day:"25"
-                }
-            ]
+            newsList:[]
+        }
+    },
+    mounted:function(){
+        let _this = this;
+        axios.get(this.$url.news).then((res)=>{
+             _this.newsList = res.data.newsList;
+          }).catch((res)=>{
+              console.log(res,this.$url.news,"error");
+          });
+    },
+    methods:{
+        handleCurrentChange:function(){
+
+        },
+        handleCurrentChange:function(){
+
         }
     }
 }

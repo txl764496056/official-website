@@ -5,8 +5,11 @@ import Vue from 'vue'
 
 import "babel-polyfill" //兼容包
 
+import url from "./mockjs/url"
+import "./mockjs/app-mock"
+
 // elementui 组件
-import ElementUI from "element-ui";
+import ElementUI from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"
 
 import App from './App'
@@ -17,7 +20,8 @@ import './css/base.css'
 import "./assets/iconfont/iconfont.css"
 
 Vue.use(ElementUI);
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+Vue.use(url);
 
 /* eslint-disable no-new */
 new Vue({
