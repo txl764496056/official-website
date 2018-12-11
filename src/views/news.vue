@@ -53,7 +53,7 @@ export default {
           });
     },
     methods:{
-        handleCurrentChange:function(){
+        handleSizeChange:function(){
 
         },
         handleCurrentChange:function(){
@@ -64,6 +64,6 @@ export default {
 </script>
 <style scoped>
 #news-content{padding:60px 0;background-color: #f5f5f5;}
-.news-banner{background: url(/static/news_img/news_bg.jpg) center center no-repeat;background-size:cover;}
+.news-banner{background: url(../assets/news_bg.jpg) center center no-repeat;background-size:cover;}
 </style>
 

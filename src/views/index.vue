@@ -12,7 +12,7 @@
             <!--  丰富人脉 -->
             <ad-item>
                 <template slot="ad-l">
-                    <img src="/static/home_img/card.png" alt="">
+                    <img src="static/home_img/card.png" alt="">
                 </template>
                 <template slot="ad-r">
                     <h2>开拓丰富人脉</h2>
@@ -30,7 +30,7 @@
                 <p>发出企业的声音</p>
                 </template>
                 <template slot="ad-r">
-                <img src="/static/home_img/live.png" alt="">
+                <img src="static/home_img/live.png" alt="">
                 </template>
             </ad-item>
             </div>
@@ -43,7 +43,7 @@
                     <el-carousel :interval="100000" type="card" :indicator-position="'none'" height="560px">
                     <el-carousel-item v-for="item in 3" :key="item">
                         <div class="card-item">
-                            <img src="/static/home_img/a2.png" alt="">
+                            <img src="static/home_img/a2.png" alt="">
                             <h2>杨体春</h2>
                             <span>YANG TI CHUN</span>
                             <p>汇能科技创始人兼CEO</p>
@@ -70,7 +70,7 @@
                     <h3>三六零：非公开发行股票申请获受理</h3>
                     <span>2018-06-13</span>
                     <div class="news-l-img">
-                    <img src="/static/home_img/new_img.png" alt="">
+                    <img src="static/home_img/new_img.png" alt="">
                     </div>
                     <p>三零六公司非公开发行股票申请获得证监会受理。公司拟募资不超过108亿元，用于网络空间安全研发中心等9大项目。</p>
                 </div>
@@ -128,27 +128,27 @@ export default {
     },
     data:function(){
         return {
-            bannerImg:["/static/home_img/banner1.jpg","/static/home_img/banner2.jpg","/static/home_img/banner3.jpg"],
+            bannerImg:["static/home_img/banner1.jpg","static/home_img/banner2.jpg","static/home_img/banner3.jpg"],
             seamlessImg:[
                 {
                     to:"/",
-                    src:"/static/home_img/a2.png"
+                    src:"static/home_img/a2.png"
                 },
                 {
                     to:"/",
-                    src:"/static/home_img/a2.png"
+                    src:"static/home_img/a2.png"
                 },
                 {
                     to:"/",
-                    src:"/static/home_img/a2.png"
+                    src:"static/home_img/a2.png"
                 },
                 {
                     to:"/",
-                    src:"/static/home_img/a2.png"
+                    src:"static/home_img/a2.png"
                 },
                 {
                     to:"/",
-                    src:"/static/home_img/a2.png"
+                    src:"static/home_img/a2.png"
                 }
             ]
         }
@@ -177,7 +177,7 @@ export default {
 /* 卡片轮播 start*/
 .epxert-box{position: relative;margin:0 auto;height: 625px;margin-top: 65px;}
 /* 标题 */
-.expert-team{background: url(/static/home_img/team_bg.jpg) center top no-repeat;padding-top: 50px;padding-bottom: 10px;background-color:#01497B;}
+.expert-team{background: url(../assets/team_bg.jpg) center top no-repeat;padding-top: 50px;padding-bottom: 10px;background-color:#01497B;}
 .expert-team h2{color:#fff;font-size: 30px;text-align: center;;font-weight: bold;}
 .expert-team h3{color:#a4ccf5;font-size: 24px;text-align: center;margin-top: 20px;font-weight: normal;}
 /* 卡片 */

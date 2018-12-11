@@ -11,7 +11,7 @@
         </div>
         <div class="item-r wow animated fadeInRight">
             <slot name="ad-r">
-                <img src="/static/home_img/199call.png" alt="">
+                <img src="static/home_img/199call.png" alt="">
             </slot>
         </div>
     </div>

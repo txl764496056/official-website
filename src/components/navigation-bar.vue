@@ -82,39 +82,39 @@ export default {
                     },
                     {
                         name:"产业布局",
-                        img:"/static/home_img/nav_Industrial.png",
+                        img:"static/home_img/nav_Industrial.png",
                         url:"/"
                     },
                     {
                         name:"荣誉证书",
-                        img:"/static/home_img/nav_my.png",
+                        img:"static/home_img/nav_my.png",
                         url:"/"
                     },
                     {
                         name:"企业公告",
-                        img:"/static/home_img/nav_affiche.png",
+                        img:"static/home_img/nav_affiche.png",
                         url:"/"
                     }
                 ],
                 "productC":[
                     {
                         name:"发现",
-                        img:"/static/home_img/nav_find.png",
+                        img:"static/home_img/nav_find.png",
                         url:"/"
                     },
                     {
                         name:"汇聊",
-                        img:"/static/home_img/nav_chat.png",
+                        img:"static/home_img/nav_chat.png",
                         url:"/"
                     },
                     {
                         name:"通讯",
-                        img:"/static/home_img/nav_call.png",
+                        img:"static/home_img/nav_call.png",
                         url:"/"
                     },
                     {
                         name:"直播",
-                        img:"/static/home_img/nav_live.png",
+                        img:"static/home_img/nav_live.png",
                         url:"/"
                     },
                     {
@@ -126,7 +126,7 @@ export default {
                 "contract":[
                      {
                         name:"招贤纳士",
-                        img:"/static/home_img/nav_recruit.png",
+                        img:"static/home_img/nav_recruit.png",
                         url:"/"
                     }
                 ]
