@@ -15,7 +15,7 @@ export default {
     name:"top-bar",
     data:function(){
         return {
-            prompt:"您好，欢迎进入汇能科技！",
+            prompt:"您好，欢迎进入****公司！",
             time:"今天是2018年6月21日星期四"
         }
     }

@@ -33,7 +33,7 @@ export default {
             activeIndex:0,
             logo:"static/logo.png",
             companyMsg:{
-                name: "武汉星梦时代",//公司名称
+                name: "****公司",//公司名称
             },
             navList:[ // 导航一级菜单
                 {
