@@ -8,6 +8,9 @@ import "babel-polyfill" //兼容包
 import url from "./mockjs/url"
 import "./mockjs/app-mock"
 
+import {WOW} from "./mockjs/wow.min2"
+new WOW({live: false}).init();
+
 // elementui 组件
 import ElementUI from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"

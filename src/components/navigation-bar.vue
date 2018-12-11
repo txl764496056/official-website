@@ -31,7 +31,7 @@ export default {
     data:function(){
         return {
             activeIndex:0,
-            logo:"/static/logo.png",
+            logo:"static/logo.png",
             companyMsg:{
                 name: "武汉星梦时代",//公司名称
             },
@@ -77,7 +77,7 @@ export default {
                 "profile":[
                     {
                         name:"企业文化",
-                        img:"/static/home_img/nav_culture.png",
+                        img:"static/home_img/nav_culture.png",
                         url:"/"
                     },
                     {
@@ -119,7 +119,7 @@ export default {
                     },
                     {
                         name:"我的",
-                        img:"/static/home_img/nav_my.png",
+                        img:"static/home_img/nav_my.png",
                         url:"/"
                     }
                 ],
