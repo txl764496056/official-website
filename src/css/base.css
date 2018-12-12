@@ -1,3 +1,4 @@
+/* "lang=scss"; */
 *{font-family: "微软雅黑",Arial,"Helvetica Neue",Helvetica,"sans-serif";font-size: 16px;box-sizing:border-box;margin:0;padding:0;}
 a{text-decoration:none;}
 img{border:none;}
@@ -33,3 +34,12 @@ a{text-decoration:none;color:#000;}
 .dis{display: none;}
 .video-container{width:1200px;margin:0 auto;position: relative;}
 
+.page-nums{background-color:transparent;}
+.page-nums .el-pager li{width:45px;}
+.page-nums .el-pager li:hover,.page-nums .el-pager li:active,.page-nums .el-pager li:visited{background-color:#0099ff;color:#fff;}
+.page-nums .el-pager li.active{color:#0099ff;background-color:#fff;}
+.page-nums .el-pager li,
+.el-pagination.page-nums button span,
+.page-nums .btn-next,
+.page-nums .btn-prev,
+.el-pagination.page-nums .el-pagination__total{height:45px;line-height:45px;margin:0 4px;font-size:15px;font-weight: normal;color:#333}

@@ -15,17 +15,17 @@
         </div>
         <!-- 列表 end -->
         <!-- 分页 start -->
-        <!-- <el-pagination
+        <el-pagination class="page-nums"
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
             :current-page="4"
-            :page-count="30"
-            :page-size="100"
-            layout="total, prev, pager, next"
+            :page-size="10"
+            layout=" prev, pager, next,total"
             :total="400"
+            :page-count="40"
             prev-text="上一页"
             next-text="下一页">
-        </el-pagination> -->
+        </el-pagination>
         <!-- 分页 end -->
     </div>
 </template>
@@ -62,8 +62,20 @@ export default {
     }
 }
 </script>
-<style scoped>
-#news-content{padding:60px 0;background-color: #f5f5f5;}
-.news-banner{background: url(../assets/news_bg.jpg) center center no-repeat;background-size:cover;}
+<style lang="scss" scoped>
+.news{background-color: #f5f5f5;padding-bottom:30px;}
+#news-content{padding:60px 0;}
+.news-banner{background:url(../assets/news_bg.jpg) center center no-repeat;background-size:cover;}
+// /deep/ .page-nums{background-color:transparent;}
+// /deep/ .page-nums .el-pager li{width:45px;}
+// /deep/ .page-nums .el-pager li:hover,/deep/ .page-nums .el-pager li:active,/deep/ .page-nums .el-pager li:visited{background-color:#0099ff;color:#fff;}
+// /deep/ .page-nums .el-pager li.active{color:#0099ff;background-color:#fff;}
+// /deep/ .page-nums .el-pager li,
+// /deep/ .page-nums button span,
+// /deep/.page-nums .btn-next,
+// /deep/.page-nums .btn-prev,
+// /deep/ .page-nums .el-pagination__total{height:45px;line-height:45px;margin:0 4px;font-size:15px;font-weight: normal;color:#333}
+
+
 </style>
 
