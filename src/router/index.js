@@ -5,6 +5,7 @@ import CompanyProfile from '@/views/company_profile' //企业简介
 import Index from '@/views/index' //首页
 import News from '@/views/news' //新闻
 import productCenter from '@/views/product_center' //产品中心
+import Mall from '@/views/mall' //商城
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
       path:"/product_center",
       name:"product_center",
       component:productCenter
+    },
+    {
+      path:"/mall",
+      name:"mall",
+      component:Mall
     }
   ]
 })

@@ -45,19 +45,23 @@ export default {
         }
     },
     mounted:function(){
-        let _this = this;
-        axios.get(this.$url.news).then((res)=>{
-             _this.newsList = res.data.newsList;
-          }).catch((res)=>{
-              console.log(res,this.$url.news,"error");
-          });
+        this.getData();
     },
+
     methods:{
         handleSizeChange:function(){
-
+            this.getData();
         },
         handleCurrentChange:function(){
-
+            this.getData();
+        },
+        getData:function(){
+            let _this = this;
+            axios.get(this.$url.news).then((res)=>{
+                _this.newsList = res.data.newsList;
+            }).catch((res)=>{
+                console.log(res,this.$url.news,"error");
+            });
         }
     }
 }

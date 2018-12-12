@@ -53,7 +53,7 @@ export default {
                 },
                 {
                     name:"商城",
-                    url:"/",
+                    url:"/mall",
                     key:""
                 },
                 {

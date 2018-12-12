@@ -49,19 +49,22 @@ export default {
         }
     },
     created:function(){
-        let _this = this;
-        axios.get(this.$url.producterCenterList).then((res)=>{
-            _this.cardList = res.data.producterCenterList;
-        }).catch((res)=>{
-            console.log(res,"error");
-        });
+       this.getData();
     },
     methods:{
         handleSizeChange:function(){
-
+            this.getData();
         },
         handleCurrentChange:function(){
-
+            this.getData();
+        },
+        getData:function(){
+             let _this = this;
+            axios.get(this.$url.producterCenterList).then((res)=>{
+                _this.cardList = res.data.producterCenterList;
+            }).catch((res)=>{
+                console.log(res,"error");
+            });
         }
     }
 }
