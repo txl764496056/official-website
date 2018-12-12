@@ -44,7 +44,7 @@ export default {
             newsList:[]
         }
     },
-    mounted:function(){
+    mounted:function(){ 
         this.getData();
     },
 
@@ -55,12 +55,13 @@ export default {
         handleCurrentChange:function(){
             this.getData();
         },
+        
         getData:function(){
             let _this = this;
             axios.get(this.$url.news).then((res)=>{
                 _this.newsList = res.data.newsList;
             }).catch((res)=>{
-                console.log(res,this.$url.news,"error");
+                console.log(res,"error");
             });
         }
     }
@@ -70,16 +71,5 @@ export default {
 .news{background-color: #f5f5f5;padding-bottom:30px;}
 #news-content{padding:60px 0;}
 .news-banner{background:url(../assets/news_bg.jpg) center center no-repeat;background-size:cover;}
-// /deep/ .page-nums{background-color:transparent;}
-// /deep/ .page-nums .el-pager li{width:45px;}
-// /deep/ .page-nums .el-pager li:hover,/deep/ .page-nums .el-pager li:active,/deep/ .page-nums .el-pager li:visited{background-color:#0099ff;color:#fff;}
-// /deep/ .page-nums .el-pager li.active{color:#0099ff;background-color:#fff;}
-// /deep/ .page-nums .el-pager li,
-// /deep/ .page-nums button span,
-// /deep/.page-nums .btn-next,
-// /deep/.page-nums .btn-prev,
-// /deep/ .page-nums .el-pagination__total{height:45px;line-height:45px;margin:0 4px;font-size:15px;font-weight: normal;color:#333}
-
-
 </style>
 

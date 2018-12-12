@@ -63,7 +63,7 @@ export default {
                 },
                  {
                     name:"客户端下载",
-                    url:"/",
+                    url:"/download",
                     key:""
                 },
                  {
