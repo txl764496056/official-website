@@ -7,6 +7,7 @@ import News from '@/views/news' //新闻
 import productCenter from '@/views/product_center' //产品中心
 import Mall from '@/views/mall' //商城
 import Download from '@/views/download' //客户端下载
+import Contract from '@/views/contract' //联系我们
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
       path:"/download",
       name:"download",
       component:Download
+    },
+    {
+      path:"/contract",
+      name:"contract",
+      component:Contract
     }
   ]
 })

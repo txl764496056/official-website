@@ -68,7 +68,7 @@ export default {
                 },
                  {
                     name:"联系我们",
-                    url:"/",
+                    url:"/contract",
                     key:"contract"
                 }
             ],
