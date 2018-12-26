@@ -1,7 +1,7 @@
 <template>
     <div class="mall-box">
         <!-- banner start -->
-        <a href="#mall-content">
+        <a href="#mall-content" class="scrollTo">
            <page-banner title='' customClass="mall-banner" content=""></page-banner>
         </a>
         <!-- banner end -->

@@ -7,6 +7,7 @@ import "babel-polyfill" //兼容包
 
 import url from "./mockjs/url"
 import "./mockjs/app-mock"
+import "./mockjs/office-web"
 
 import {WOW} from "./mockjs/wow.min2"
 new WOW({live: false}).init();
@@ -31,5 +32,9 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  mounted:function(){
+    scrollTo();
+  }
 })
+

@@ -1,7 +1,7 @@
 <template>
     <div class="news">
         <!-- banner start -->
-        <a href="#news-content">
+        <a href="#news-content" class="scrollTo">
            <page-banner title='新闻资讯' customClass="news-banner" :content="bannerContent"></page-banner>
         </a>
         <!-- banner end -->

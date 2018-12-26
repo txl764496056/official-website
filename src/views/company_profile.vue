@@ -1,7 +1,7 @@
 <template>
     <div class="profile-box">
         <!-- banner start -->
-        <a href="#profile-content">
+        <a href="#profile-content" class="scrollTo">
            <page-banner title='企业简介' customClass="profile-banner" :content="bannerContent"></page-banner>
         </a>
         <!-- banner end -->

@@ -46,3 +46,5 @@ function title(n,m){
     let arr = [Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m)]; 
     return  arr;
 }
+
+

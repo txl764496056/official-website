@@ -3,7 +3,7 @@
         <span><i class="iconfont icon-1302dizhi" :class="bgColor"></i></span>
         <h2>{{title}}</h2>
         <slot>
-            <p>深圳市宝安区西乡街道<br>满京华艺峦大厦2座803-805</p>
+            <p>湖北省武汉市<br>江汉区803—805</p>
         </slot>
     </div>
 </template>
