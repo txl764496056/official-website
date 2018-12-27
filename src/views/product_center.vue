@@ -1,6 +1,6 @@
 <template>
     <div class="product-box">
-        <a href="#product-center" class="scrollTo">
+        <a href="#product-center" class="scrollTo" @click="scrollTo()">
            <page-banner title='产品中心' customClass="product-banner" :content="bannerContent"></page-banner>
         </a>
         <div id="product-center">

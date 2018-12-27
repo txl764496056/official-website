@@ -5,7 +5,10 @@
     <!-- 导航栏 -->
     <navigation-bar></navigation-bar>
     <router-view/>
+    <!-- footer -->
     <bottom-footer></bottom-footer>
+    <!-- 返回顶部按钮 -->
+    <i @click="backTop()" class="iconfont icon-arrow-up back-top"></i>
   </div>
 </template>
 
@@ -28,7 +31,7 @@ export default {
     "bottom-footer":bottomFooter
   },
   mounted:function(){
-  }
+  },
 }
 </script>
 
@@ -40,5 +43,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
+.back-top{position:fixed;right:30px;bottom:100px;font-size:30px;color:#fff;display: inline-block;width:50px;height:50px;background-color:#0099ff;line-height:50px;text-align:center;border-radius:5px;}
 </style>

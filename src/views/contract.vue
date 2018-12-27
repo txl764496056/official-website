@@ -1,11 +1,11 @@
 <template>
     <div class="contract-box">
         <!-- banner start -->
-        <a href="#contract-us" class="scrollTo">
+        <a href="#contract-us" class="scrollTo" @click="scrollTo()">
             <page-banner title='联系我们' customClass="contract-banner" content="往下可以轻松的联系我们哦"></page-banner>
         </a>
         <!-- banner end -->
-        <div class="contract-type container">
+        <div id="contract-us" class="contract-type container">
             <contact-item title="公司地址"></contact-item>
             <contact-item title="联系方式" bgColor="bg-color2">
                 <slot>
@@ -62,6 +62,8 @@ export default {
     data:function(){
         return {
         }
+    },
+    methods:{
     }
 }
 </script>

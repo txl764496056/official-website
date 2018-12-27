@@ -1,7 +1,7 @@
 <template>
     <div class="download-box">
         <!-- banner start -->
-        <a href="#app-download" class="scrollTo">
+        <a href="#app-download" class="scrollTo" @click="scrollTo()">
              <page-banner title='客户端下载' customClass="app-banner" content="最新版客户端"></page-banner>
         </a>
         <!-- banner end -->

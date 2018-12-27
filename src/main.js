@@ -7,7 +7,7 @@ import "babel-polyfill" //兼容包
 
 import url from "./mockjs/url"
 import "./mockjs/app-mock"
-import "./mockjs/office-web"
+import officeWeb from "./mockjs/office-web"
 
 import {WOW} from "./mockjs/wow.min2"
 new WOW({live: false}).init();
@@ -26,6 +26,7 @@ import "./assets/iconfont/iconfont.css"
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
 Vue.use(url);
+Vue.use(officeWeb);
 
 /* eslint-disable no-new */
 new Vue({
@@ -34,7 +35,8 @@ new Vue({
   components: { App },
   template: '<App/>',
   mounted:function(){
-    scrollTo();
+  },
+  methods:{
+    
   }
 })
-

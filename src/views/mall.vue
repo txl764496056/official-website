@@ -1,8 +1,8 @@
 <template>
     <div class="mall-box">
         <!-- banner start -->
-        <a href="#mall-content" class="scrollTo">
-           <page-banner title='' customClass="mall-banner" content=""></page-banner>
+        <a href="#mall" class="scrollTo" @click="scrollTo()">
+           <page-banner title='带上它世界都是你的' customClass="mall-banner" content="音乐MUSIC发烧友"></page-banner>
         </a>
         <!-- banner end -->
         <!-- 内容 start -->
