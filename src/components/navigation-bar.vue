@@ -7,7 +7,7 @@
 			</div>
 			<ul id="navbar-nav" class="fr">
                 <li v-for="(item,index) in navList" :key="index" @click="navClick" @mouseover="navbarMover" :class="{'active':activeIndex==index}">
-                    <router-link :data-nav="item.name" :data-index="index" :data-key="item.key"  :to="item.url">{{item.name}}</router-link>
+                    <router-link :data-nav="item.name" :data-index="index" :data-key="item.key" :to="item.url">{{item.name}}</router-link>
                 </li>
 			</ul>
 		</div>
@@ -78,7 +78,7 @@ export default {
                     {
                         name:"企业文化",
                         img:"static/home_img/nav_culture.png",
-                        url:"/"
+                        url:"/profile_culture"
                     },
                     {
                         name:"产业布局",

@@ -23,6 +23,5 @@ exports.install = function(Vue,options){
 	Vue.prototype.getEvent = function(evt){
 			return evt||window.event;
 	}
-
 }
 
