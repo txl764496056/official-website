@@ -1,7 +1,6 @@
 <template>
     <div>
-        <bread-tab></bread-tab>
-        <title1 class="wow animated fadeInDown" titleEN="公司企业文化建设，员工万众一心" titleCN="企业文化"></title1>
+        <title1 class="culture-title wow animated fadeInDown" titleEN="公司企业文化建设，员工万众一心" titleCN="企业文化"></title1>
         <!-- 列表 start -->
         <div class="company-details clear wow animated zoomIn">
             <div class="details-l scale">
@@ -88,21 +87,23 @@
     </div>
 </template>
 <script>
-import breadTab from "../components/bread-tab" //面包屑导航
 import title1 from '../components/title1' //标题
 export default {
     components:{
-        "bread-tab":breadTab,
         "title1":title1
     },
     data:function(){
         return {
 
         }
+    },
+    mounted:function(){
     }
 }
 </script>
 <style>
+.culture-title{margin:30px 0 50px;}
+
 .company-details{margin-top:40px;}
 .details-l,.details-r{float: left;}
 .details-l{width:500px;}

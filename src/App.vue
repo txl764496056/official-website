@@ -13,7 +13,6 @@
 </template>
 
 <script>
-
 import navigationBar from "./components/navigation-bar" //导航
 import topBar from "./components/top-bar" //顶部导航
 import bottomFooter from "./components/bottom-footer" //底部
@@ -22,7 +21,6 @@ export default {
   name: 'App',
   data:function(){
       return {
-        navlist:new Array()
       }
   },
   components:{

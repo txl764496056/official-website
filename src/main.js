@@ -27,6 +27,7 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false;
 Vue.use(url);
 Vue.use(officeWeb);
+Vue.use(router);
 
 /* eslint-disable no-new */
 new Vue({

@@ -24,6 +24,9 @@ export default new Router({
       path:"/company_profile",
       // name:"company_profile", //当某个路由有子集路由的时候，这时候父级路由需要一个默认的路由，所以父级路由不能定义name属性
       component:CompanyProfile,
+      meta:{
+        title:"企业简介"
+      },
       children:[
         { //企业简介首页
           path:"/profile_index",
@@ -38,13 +41,19 @@ export default new Router({
           path:"/profile_culture",
           name:"profile_culture",
           component:ProfileCulture,
+          meta:{
+            title:"企业文化"
+          }
         }
       ]
     },
     {
       path: '/index',
       name: 'index',
-      component: Index
+      component: Index,
+      meta:{
+        title:"首页"
+      }
     },
     {
       path:"/",
@@ -53,27 +62,42 @@ export default new Router({
     {
       path:"/news",
       name:"news",
-      component:News
+      component:News,
+      meta:{
+        title:"新闻资讯"
+      }
     },
     {
       path:"/product_center",
       name:"product_center",
-      component:productCenter
+      component:productCenter,
+      meta:{
+        title:"产品中心"
+      }
     },
     {
       path:"/mall",
       name:"mall",
-      component:Mall
+      component:Mall,
+      meta:{
+        title:"商城"
+      }
     },
     {
       path:"/download",
       name:"download",
-      component:Download
+      component:Download,
+      meta:{
+        title:"客户端下载"
+      }
     },
     {
       path:"/contract",
       name:"contract",
-      component:Contract
+      component:Contract,
+      meta:{
+        title:"联系我们"
+      }
     }
   ]
 })

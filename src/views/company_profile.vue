@@ -5,22 +5,57 @@
            <page-banner title='企业简介' customClass="profile-banner" :content="bannerContent"></page-banner>
         </a>
         <!-- banner end -->
-        <!-- 内容 start -->
+        <!-- 内容 start --> 
         <div id="profile-content" class="profile-content container mtb50">
+            <bread-tab v-show="isShow"  :itemMsg="tabMsg"></bread-tab>
             <router-view/>
         </div>
         <!-- 内容 end -->
     </div>
 </template>
 <script>
+import router from '../router'
 import pageBanner from '../components/page-banner'
+import breadTab from "../components/bread-tab" //面包屑导航
 export default {
     components:{
-        "page-banner":pageBanner
+         "bread-tab":breadTab,
+         "page-banner":pageBanner
     },
     data:function(){
         return {
-            bannerContent:"一个富有激情而又低调的团队，您的满意，是我们不懈的使命"
+            bannerContent:"一个富有激情而又低调的团队，您的满意，是我们不懈的使命",
+            isShow:false,
+            tabMsg:[]
+        }
+    },
+    mounted:function(){
+        this.breadTab();
+    },
+    methods:{
+        breadTab:function(){
+            let curr = router.history.current;
+            let currpath = curr.path; //当前路径
+            let matched = curr.matched; //所有历史记录
+            let arr = []; //存放历史路径的title和path
+            if(currpath!='/profile_index'){
+                this.isShow = true;
+            }else{
+                this.isShow = false;
+            }
+            // 从历史记录中筛选出需要的数据
+            arr = matched.map(function(item,index){
+                return {
+                    title:item.meta.title || "",
+                    path:item.path
+                }
+            });
+            this.tabMsg = arr;
+        }
+    },
+    watch:{
+        '$route'(to,from){
+            this.breadTab();
         }
     }
 }
