@@ -1,105 +1,56 @@
 <template>
     <div>
-        <title1 class="culture-title wow animated fadeInDown" titleEN="公司企业文化建设，员工万众一心" titleCN="企业文化"></title1>
-        <!-- 列表 start -->
-        <div class="company-details clear wow animated zoomIn">
-            <div class="details-l scale">
-                <img src="static/company_profile/culture_img.jpg" alt="">
-            </div>
-            <div class="details-r">
-                <h2>团结、顽强、永不言弃！</h2>
-                <ul>
-                    <li>
-                        <h3>
-                            <i class="iconfont icon-huizhang"></i>
-                            我们的使命
-                        </h3>
-                        <p>为全球中小微企和商务人士提供一款极致创新的移动商务工具，实现惠民惠国惠企。</p>
-                    </li>
-                    <li>
-                        <h3>
-                            <i class="iconfont icon-daohang"></i>
-                            我们的愿景
-                        </h3>
-                        <p>引领世界移动互联网，人物联网，实现线上线下全方位交易，解决中小微企和商务人士的痛点。</p>
-                    </li>
-                    <li>
-                        <h3>
-                            <i class="iconfont icon-baxin"></i>
-                            我们的目标
-                        </h3>
-                        <p>五年内争创上亿市值移动互联网公司。</p>
-                    </li>
-                    <li>
-                        <h3>
-                            <i class="iconfont icon-zhishipai"></i>
-                            我们的宗旨
-                        </h3>
-                        <p>感恩、创新、诚信、共赢。</p>
-                    </li>
-                    <li>
-                        <h3>
-                            <i class="iconfont icon-shu"></i>
-                            我们的双心文化
-                        </h3>
-                        <p>孝心、爱心。</p>
-                    </li>
-                    <li>
-                        <h3>
-                            <i class="iconfont icon-zengdayinliang"></i>
-                            我们的口号
-                        </h3>
-                        <p>汇智能通，助您事业更成功。</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- 列表 end -->
-        <!-- 图片 start  -->
-            <div class="culture-photos wow animated zoomIn">
-				<h2>企业文化照片墙<a href="company_culture_photos.html">查看更多></a></h2>
-				<div class="culphoto-t">
-					<a class="culphoto-tl" href="#">
-						<img src="static/mayi.jpg" alt="">
-					</a>
-					<div class="culphoto-tr">
-						<a class="culimgbox" href="#">
-							<img src="static/home_img/a2.png" alt="">
-						</a>
-						<a class="culimgbox" href="#">
-							<img src="static/home_img/a2.png" alt="">
-						</a>
-					</div>
-				</div>  
-				<div class="culphoto-b">
-					<a href="#" class="culimgbox2">
-						<img src="static/shake_hands2.jpg" alt="">
-					</a>
-					<a href="#" class="culimgbox2">
-						<img src="static/shake_hands.jpg" alt="">
-					</a>
-					<a href="#" class="culimgbox3">
-						<img src="static/shake_hands2.jpg" alt="">
-					</a>
-				</div>   
-			</div>
-            <!-- 图片end -->
+        <router-view/>
     </div>
 </template>
 <script>
-import title1 from '../components/title1' //标题
-export default {
-    components:{
-        "title1":title1
-    },
-    data:function(){
-        return {
-
-        }
-    },
-    mounted:function(){
-    }
-}
+// import axios from "axios"
+// import title1 from '../components/title1' //标题
+// export default {
+//     components:{
+//         "title1":title1
+//     },
+//     data:function(){
+//         return {
+//             details:[]
+//         }
+//     },
+//     created:function(){
+//         axios.get(this.$url.profileCulture).then((res)=>{
+//             let arr = res.data.profileCulture;
+//             arr.map(function(item,index){
+//                 let str = "";
+//                 switch(index){
+//                     case 0:
+//                         str = "icon-huizhang";
+//                         break;
+//                     case 1:
+//                         str = "icon-daohang";
+//                         break;
+//                     case 2:
+//                         str = "icon-baxin";
+//                         break;
+//                     case 3:
+//                         str = "icon-zhishipai";
+//                         break;
+//                     case 4:
+//                         str = "icon-shu";
+//                         break;
+//                     case 5:
+//                         str = "icon-zengdayinliang";
+//                         break;
+//                     default:
+//                         str = "";
+//                         break;
+//                 }
+//                 return item.icon = str;
+//             });
+//             this.details = arr;
+//         }).catch((err)=>{
+//             console.log(err);
+//         });
+//     }
+// }
 </script>
 <style>
 .culture-title{margin:30px 0 50px;}

@@ -31,6 +31,7 @@ export default {
     },
     mounted:function(){
         this.breadTab();
+        console.log(router);
     },
     methods:{
         breadTab:function(){
@@ -55,6 +56,7 @@ export default {
     },
     watch:{
         '$route'(to,from){
+            console.log(router);
             this.breadTab();
         }
     }
