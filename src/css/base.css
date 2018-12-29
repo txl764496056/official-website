@@ -34,7 +34,7 @@ a{text-decoration:none;color:#000;}
 .dis{display: none;}
 .video-container{width:1200px;margin:0 auto;position: relative;}
 
-.page-nums{background-color:transparent;}
+.page-nums{background-color:transparent;text-align:center;margin-top:30px;padding:0;box-shadow:0 0 3px rgba(0,0,0,0.15);}
 .page-nums .el-pager li{width:45px;}
 .page-nums .el-pager li:hover,.page-nums .el-pager li:active,.page-nums .el-pager li:visited{background-color:#0099ff;color:#fff;}
 .page-nums .el-pager li.active{color:#0099ff;background-color:#fff;}
@@ -43,3 +43,11 @@ a{text-decoration:none;color:#000;}
 .page-nums .btn-next,
 .page-nums .btn-prev,
 .el-pagination.page-nums .el-pagination__total{height:45px;line-height:45px;margin:0 4px;font-size:15px;font-weight: normal;color:#333}
+
+.home-con{margin-top: 50px;}
+.home-p1{font-size: 22px;font-weight: normal;color:#333;margin-bottom: 15px;text-align:left;}
+.home-p2{color:#828a92;font-size: 16px;margin-right: 40px;}
+.home-p3{color:#333;font-size: 16px;line-height: 30px;text-align: justify;}
+.home-txt{text-align:center;}
+.home-txt p{text-align:left;margin-top: 30px;color:#333;font-size: 16px;line-height: 30px;text-align: justify; margin-bottom: 20px;}
+.home-txt img{max-width:100%;}

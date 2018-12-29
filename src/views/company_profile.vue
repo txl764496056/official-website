@@ -31,7 +31,6 @@ export default {
     },
     mounted:function(){
         this.breadTab();
-        console.log(router);
     },
     methods:{
         breadTab:function(){
@@ -45,18 +44,19 @@ export default {
                 this.isShow = false;
             }
             // 从历史记录中筛选出需要的数据
-            arr = matched.map(function(item,index){
+            arr = matched.filter(function(item,index){ //过滤掉每级路由的首页
+                return item.path.search("_index")==-1;
+            }).map(function(item,index){ //获取每级路由的路径和title
                 return {
-                    title:item.meta.title || "",
-                    path:item.path
-                }
+                        title:item.meta.title || "",
+                        path:item.path
+                    }
             });
             this.tabMsg = arr;
         }
     },
     watch:{
         '$route'(to,from){
-            console.log(router);
             this.breadTab();
         }
     }
@@ -66,7 +66,6 @@ export default {
 .profile-box{text-align:left;}
 .profile-banner{background: url("../assets/profile_banner.jpg") center center no-repeat;background-size:cover;}
 .profile-content{padding:70px 0;}
-
 </style>
 
 

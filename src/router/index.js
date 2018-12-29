@@ -12,16 +12,27 @@ import ProfileCulture from '@/views/profile_culture' //企业文化
 import ProfileIndex from "@/views/profile_index" //企业简介首页
 import companyCulturePhotos from "@/views/company_culture_photos" //企业文化照片墙
 import cultureIndex from "@/views/culture_index" //企业文化首页
+import viewDetails from "@/views/view_details" //详情页
+// import profileLayout from "@/views/profile_layout" //页面A
+// import profileHonor from "@/views/profile_honor" //页面B
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'HelloWorld',
-    //   component: HelloWorld
-    // },
+    {
+      path: '/index',
+      name: 'index',
+      component: Index,
+      meta:{
+        title:"首页"
+      }
+    },
+    {
+      path:"/",
+      redirect:"/index"
+    },
     {// -------------------一级路由（企业简介）
       path:"/company_profile",
       // name:"company_profile", //当某个路由有子集路由的时候，这时候父级路由需要一个默认的路由，所以父级路由不能定义name属性
@@ -58,27 +69,24 @@ export default new Router({
             },
             {
               path:"/company_culture_photos",
-              name:"company_culture_photos",
               component:companyCulturePhotos,
               meta:{
                 title:"企业文化照片墙"
-              }
+              },
+              children:[//------------------四级路由
+                {
+                  path:"/view_details",
+                  name:"view_details",
+                  component:viewDetails,
+                  meta:{
+                    title:"照片详情"
+                  }
+                }
+              ]//四级路由-end
             }
-          ]
+          ]//三级路由-end
         }
-      ]
-    },
-    {
-      path: '/index',
-      name: 'index',
-      component: Index,
-      meta:{
-        title:"首页"
-      }
-    },
-    {
-      path:"/",
-      redirect:"/index"
+      ]//二级路由-end
     },
     {
       path:"/news",
@@ -90,11 +98,20 @@ export default new Router({
     },
     {
       path:"/product_center",
-      name:"product_center",
       component:productCenter,
       meta:{
         title:"产品中心"
-      }
+      },
+      children:[
+        {
+          path:"/view_details2",
+          name:"view_details2",
+          component:viewDetails,
+          meta:{
+            title:"产品详情"
+          }
+        }
+      ]
     },
     {
       path:"/mall",

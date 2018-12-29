@@ -3,13 +3,13 @@
         <a href="#product-center" class="scrollTo" @click="scrollTo()">
            <page-banner title='产品中心' customClass="product-banner" :content="bannerContent"></page-banner>
         </a>
-        <div id="product-center">
+        <div v-show="isShow" id="product-center">
             <div class="product-nav wow animated fadeInDown">
                 <tab-bar :navList="navList"></tab-bar>
             </div>
             <div class="container">
                 <div class="product-list clear">
-                    <router-link v-for="(item,index) in cardList" :key="index" to="/">
+                    <router-link v-for="(item,index) in cardList" :key="index" to="/view_details2">
                         <card-item :title="item.title" :imgSrc="item.imgSrc"></card-item>
                     </router-link>
                 </div>
@@ -28,6 +28,7 @@
                 <!-- 分页 end -->
             </div>
         </div>
+        <router-view class="container"></router-view>
     </div>
 </template>
 <script>
@@ -45,7 +46,8 @@ export default {
         return {
             bannerContent:"为全球中小微企和商务人士提供极致创新的移动和商务工具，实现惠民惠国惠企",
             navList:["全部","发现","通讯","汇聊","直播","我的"],
-            cardList:[]
+            cardList:[],
+            isShow:true
         }
     },
     created:function(){
@@ -65,6 +67,11 @@ export default {
             }).catch((res)=>{
                 console.log(res,"error");
             });
+        }
+    },
+    watch:{
+        "$route"(to,from){  
+            this.isShow = !this.isShow;
         }
     }
 }

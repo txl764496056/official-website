@@ -71,6 +71,17 @@ Mock.mock(url.profileCulture,{
     ]
 });
 
+// 文章详情
+Mock.mock(url.pageDetails,{
+    "pageDetails|1":[{
+        "imgSrc|1":["static/home_img/a2.png","static/mayi.jpg"],
+        "title|1":title(3,25),
+        "content":Random.cparagraph(),
+        "time":Random.now(),
+        "readNum|1-500":33
+    }]
+});
+
 // 随机title
 function title(n,m){
     let arr = [Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m)]; 
