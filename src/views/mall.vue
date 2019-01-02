@@ -46,6 +46,7 @@ export default {
 }
 </script>
 <style scoped>
+a{display: block;}
 .mall-banner{background:url(../assets/mall_banner.jpg) center center no-repeat;}
 </style>
 

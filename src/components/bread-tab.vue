@@ -25,7 +25,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .tab-list{display:inline-block;}
 .title2{color:#828a92;line-height: 50px;height: 50px;border-bottom:1px solid #e6e6e6;letter-spacing: 1px;}
 .title2>*{font-size: 16px;}

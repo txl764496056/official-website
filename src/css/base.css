@@ -34,6 +34,7 @@ a{text-decoration:none;color:#000;}
 .dis{display: none;}
 .video-container{width:1200px;margin:0 auto;position: relative;}
 
+
 .page-nums{background-color:transparent;text-align:center;margin-top:30px;padding:0;box-shadow:0 0 3px rgba(0,0,0,0.15);}
 .page-nums .el-pager li{width:45px;}
 .page-nums .el-pager li:hover,.page-nums .el-pager li:active,.page-nums .el-pager li:visited{background-color:#0099ff;color:#fff;}

@@ -8,20 +8,22 @@
             </div>
         </div>
         <div class="home-txt">
-            <p>6月25日，港版支付宝AlipayHK上线首个基于区块链的电子钱包跨境汇款服务。AlipayHK的用户可以用手机响菲律宾钱包Gcash实现基于区块链技术的装张。蚂蚁金服董事长兼CEO井贤栋表示，这意味着所有的香港钱包用户，向菲律宾用户转账时，会可以实现实时到账。马云在香港发布会现场见证了第一笔汇款。	</p>
-            <p>渣打银行将为AlipayHK及GCash提供结算服务，并提供即时外汇汇率和流动性。在服务试行的前三个月，还可享受手续费豁免。资料显示，菲律宾2017年全球第三大接收汇款的市场，金额高达330亿美元。</p>
-            <p>传统的跨境汇款业务存在不少痛点：因为涉及更多的参与机构、法律法规及汇率等问题，过程很复杂，到账通常要10分钟到几天不等；晚7点后汇款最早次日到账；去柜台还要留意下班时间；中间出状况退钱要更久，还可能转丢。</p>
-            <p>马云现场表示，在支付宝成立之初，他就希望做跨境汇款相关服务，这来自于一位菲律宾朋友与他的讨论。马云表示之前没有想到通过银行跨境汇款会"charge that much"；他还分享了自己在银行几个换汇的经历。此前蚂蚁金本来希望收购MoneyGram，单后来因为美国监管局没比准而收货失败。	</p>
-            <p>蚂蚁金服在区块链领域布局已久。2015年，蚂蚁金服成立了区块链小组。到2016年底，蚂蚁金服区块链团队正式成立。2017年2月，蒋国飞加入蚂蚁金服，担任蚂蚁金服副总裁并成立技术实验室，区块链团队被纳入该体系。	</p>
-            <p>并贤栋在现场表示，蚂蚁金服的区块链有"三做三不做"的边界：用区块链来解决有社会价值的实际问题；不断攻克区块链通向大规模实际应用的技术障碍；与合作伙伴一起共建开放的区块链生态。不做没有任何真实价值的"空气币";不做违反法律法规的技术应用；不做任何伤害用户数据安全和隐私的行为。</p>
-            <p>据此前36氪报道，知识产权产业媒体IPRdaily联合incoPat创新指数研究中心于发布"2017全球区块链企业专利排行榜（前100名）",阿里巴巴列第一。其中专利申请大部分出自蚂蚁金服。</p>
-            <p>蚂蚁金服技术实验室区块链专家胡丹青曾经向36氪表示，蚂蚁金服把区块链当做信任链接设施区推进的，从数据的可信开始，然后到物的可信、资产的可信。子选择的落地场景都有一个共同点：解决普通人缺乏的安全感和信任感。比如公益捐款、房屋租赁、互助保险和正品溯源等。</p>
-            <p>此前2月10日，雄安新区宣布推行住房租赁积分制度，上线受例区块链租房应用平台。这也是国内首例。在这一政府主导的区块链统一平台，挂牌房源信息，房东房客的身份信息，房屋租赁合同信息将得到多方验证，不得篡改。据悉，中国建设银行、链家、蚂蚁金服等机构参与了这一租房模式的建设。其中，蚂蚁金服是核心区块链技术提供方，链家和建行则提供房源租赁信息等服务。	</p>
-            <p>蚂蚁金服区块链技术的其他应用场景包括公益和商品溯源。</p>
-            <p>在2016年7月上线的公益项目的基础上，2017年3月，支付宝爱心捐赠平台引入区块链技术，所有捐赠数据上链。2017年9月上线，溯源项目上线，用户可以通过扫描澳新进口食品包装上的二维码，看到商品在海通过质检、经过海外仓、国内保税仓、在天猫销售及中途的各种物流信息。蚂蚁金服提供底层的区块链技术。2017年10月，区块链技术团队进一步把这套技术方案对外输出，用茅台酒的溯源。	</p>
             <img src="static/mayi.jpg" alt="">
-            <p>马云现场表示，在支付宝成立之初，他就希望做跨境汇款相关服务，这来自于一位菲律宾朋友与他的讨论。马云表示之前没有想到通过银行跨境汇款会"charge that much"；他还分享了自己在银行几个换汇的经历。此前蚂蚁金本来希望收购MoneyGram，单后来因为美国监管局没比准而收货失败。
-            </p>
+            <p>{{currpage.content}}</p>
+        </div>
+        <div class="home-btn dis-flex wow animated fadeInUp">
+            <div class="home-btnl">
+                <button>
+                    <p>上一篇</p>
+                    <span>期待已久的Java 9今日发布</span>
+                </button>
+            </div>
+            <div class="home-btnr">
+                <button>
+                    <p>下一篇</p>
+                    <span>中国华农资产经营有限公司面向集团内外 公开...</span>
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -30,20 +32,42 @@ import axios from "axios"
 export default {
     data:function(){
         return {
-
+            msgList:[],
+            currPageId:0,
+            currpage:{}
         }
     },
     created:function(){
-        axios.get(this.$url.pageDetails).then((res)=>{
-            console.log(res);
-        }).catch((err)=>{
-            console.log(err,"获取失败！")
-        });
-    }
+        this.msgList = this.viewDetailsList;
+        // 被点击列表项的id，在详情页显示对应的详细信息
+        this.currPageId = this.$route.params.index;
+        // 获取与currPageId对应的文章信息
+        this.getPage(this.currPageId,this.msgList);
+     },
+     methods:{
+         getPage:function(currPageId,pageList){
+             let id = currPageId;
+             let list = pageList;
+             let arr = list.filter(function(item,index){
+                 return item.id==id;
+             });
+             this.currpage = arr[0];
+             console.log(arr);
+         }
+     }
 }
 </script>
-<style>
-
+<style scoped>
+.home-btn{justify-content:space-between;margin: 60px 0;font-size: 0}
+.home-btn button{width:400px;height: 90px;padding:15px;background-color: #efefef;text-align: center;border:none;position: relative;overflow: hidden;z-index: 10;}
+.home-btn button>*{position: relative;z-index: 20;}
+.home-btn button p{color:#333;font-size: 18px;}
+.home-btn button span{color:#828a92;font-size: 16px;margin-top: 5px;display: inline-block;}
+.home-btn button:after{position: absolute;left: 50%;top: 45%;width:10px;height: 10px;border-radius: 50%;transition:transform 0.5s,opacity 0.5s;background-color: #0099ff;display: inline-block;content:"";opacity:0;z-index: 13;}
+.home-btn button:hover:after{opacity: 1;transform:scale(100);}
+.home-btn button:hover>*{color:#fff;}
+.home-btnl,.home-btnr{display: inline-block;width: 50%;}
+.home-btnr{text-align: right;}
 </style>
 
 

@@ -8,22 +8,25 @@ Mock.mock(url.news,{
     "newsList|10":[
         {
             "imgSrc|1":["static/home_img/a2.png","static/mayi.jpg"],
-            "title|1":title(3,15),
-            "content":Random.cparagraph(),
-            "time":Random.now()
+            "title|1":"@ctitle(3,15)",
+            "content":"@cparagraph()",
+            "time":"@now()"
         }
     ]
 });
 
-// 产品中心擦片列表
+// 产品中心图片列表
 Mock.mock(url.producterCenterList,{
     "producterCenterList|9":[
         {
-            "title|1":title(3,15),
+            "id": "@increment",
+            "title":"@ctitle(3,15)",
             "imgSrc|1":[
                 "static/shake_hands2.jpg",
                 "static/shake_hands.jpg"
-            ]
+            ],
+            "content|3":"@cparagraph(3,4)",
+            "time":"@date()"
         }
     ]
 });
@@ -34,9 +37,9 @@ Mock.mock(url.mallList,{
         {
             "type":false,
             "imgSrc|1":["static/mall_img/image1.jpg","static/mall_img/image2.jpg","static/mall_img/image3.jpg","static/mall_img/image4.jpg"],
-            "title|1":title(3,15),
+            "title|1":"@ctitle(3,15)",
             "price|1-200.2":55,
-            "details|1":title(3,30)
+            "details|1":"@ctitle(3,30)"
         }
     ]
 });
@@ -72,20 +75,20 @@ Mock.mock(url.profileCulture,{
 });
 
 // 文章详情
-Mock.mock(url.pageDetails,{
-    "pageDetails|1":[{
-        "imgSrc|1":["static/home_img/a2.png","static/mayi.jpg"],
-        "title|1":title(3,25),
-        "content":Random.cparagraph(),
-        "time":Random.now(),
-        "readNum|1-500":33
-    }]
-});
+// Mock.mock(url.pageDetails,{
+//     "pageDetails|1":[{
+//         "imgSrc|1":["static/home_img/a2.png","static/mayi.jpg"],
+//         "title|1":title(3,25),
+//         "content":Random.cparagraph(),
+//         "time":Random.now(),
+//         "readNum|1-500":33
+//     }]
+// });
 
 // 随机title
-function title(n,m){
-    let arr = [Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m)]; 
-    return  arr;
-}
+// function title(n,m){
+//     let arr = [Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m),Random.ctitle(n,m)]; 
+//     return  arr;
+// }
 
 

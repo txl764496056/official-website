@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <!-- 顶部topbar -->
     <top-bar></top-bar>
     <!-- 导航栏 -->
@@ -21,6 +21,7 @@ export default {
   name: 'App',
   data:function(){
       return {
+        // viewDetailsList:[]
       }
   },
   components:{
@@ -41,5 +42,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+[v-cloak]{display: none;}
 .back-top{position:fixed;right:30px;bottom:100px;font-size:30px;color:#fff;display: inline-block;width:50px;height:50px;background-color:#0099ff;line-height:50px;text-align:center;border-radius:5px;}
 </style>

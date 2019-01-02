@@ -24,7 +24,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .item{width:360px;text-align: center;min-height: 360px;position: relative;padding-top:10px;}
 .item span{display: block;border-radius: 50%;width:110px;height:110px;overflow: hidden;position: absolute;left:50%;top:-55px;margin-left: -55px;margin-bottom:10px;border:8px solid #fff;}
 .item i{display: block;width:100%;height: 100%;text-align: center;font-size: 55px;color:#fff;line-height: 94px;}

@@ -4,7 +4,7 @@
         <div v-show="isShow" id="product-center">
             <div class="container">
                 <div class="product-list clear">
-                    <router-link v-for="(item,index) in cardList" :key="index"  to="/view_details">
+                    <router-link v-for="(item,index) in cardList" :key="index"  :to="{name:'view_details',params:{index:item.id}}">
                         <card-item :title="item.title" :imgSrc="item.imgSrc"></card-item>
                     </router-link>
                 </div>
@@ -23,7 +23,6 @@
                 <!-- 分页 end -->
             </div>
         </div>
-        <!-- <router-view name="culturePhoto"></router-view> -->
         <router-view/>
     </div>
 </template>
@@ -55,9 +54,14 @@ export default {
             this.getData();
         },
         getData:function(){
-             let _this = this;
+            let _this = this;
             axios.get(this.$url.producterCenterList).then((res)=>{
-                _this.cardList = res.data.producterCenterList;
+                let data = res.data.producterCenterList;
+                _this.cardList = data;
+
+                // 将照片墙信息列表给全局变量viewDetailsList
+                _this.setViewDetailsList(data);
+
             }).catch((res)=>{
                 console.log(res,"error");
             });
@@ -70,7 +74,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .photo-title{margin:30px 0;}
 .product-list{padding-top: 40px;margin-left:-15px;}
 .product-list a{margin-left: 15px;float:left;margin-bottom: 15px;font-size:0;}

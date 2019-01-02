@@ -33,7 +33,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .since{font-size: 73px;color:#eeebe9;letter-spacing: 2px;font-weight: bold;}
 .profile-title{color:#333;font-size: 30px;letter-spacing: 1px;padding:6px 0;border-bottom: 2px solid #0099ff;width:610px;}
 .mart3{margin-top: 30px;}

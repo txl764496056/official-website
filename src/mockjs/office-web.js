@@ -23,5 +23,13 @@ exports.install = function(Vue,options){
 	Vue.prototype.getEvent = function(evt){
 			return evt||window.event;
 	}
+
+	// 3、存储 新闻列表信息、照片墙列表信息
+	Vue.prototype.viewDetailsList = [];
+	
+	// 设置列表信息值
+	Vue.prototype.setViewDetailsList = function(obj){
+		Vue.prototype.viewDetailsList = obj;
+	}
 }
 
