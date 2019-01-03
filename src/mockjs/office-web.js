@@ -33,3 +33,18 @@ exports.install = function(Vue,options){
 	}
 }
 
+/**
+ * org：被替换的字符
+ * tag：替换字符（将str替换成dis）
+ * n：匹配的n项为一组，如：匹配a,匹配到3组，只对第3组进行替换，依次就是6、9、12。。进行替换
+ *   */
+String.prototype.strReplace = function(org,n,tag){
+	let arr = this.split(org);
+	for(var i=0;i<arr.length-1;i++){
+		arr[i]+= "。";
+		if((i+1)%n==0){
+			arr[i]+=tag;
+		}
+	}
+	return arr.join("");
+  }

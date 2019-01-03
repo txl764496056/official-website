@@ -83,17 +83,17 @@ export default {
                     {
                         name:"产业布局",
                         img:"static/home_img/nav_Industrial.png",
-                        url:"/"
+                        url:"/profile_layout"
                     },
                     {
                         name:"荣誉证书",
                         img:"static/home_img/nav_my.png",
-                        url:"/"
+                        url:"/profile_honor"
                     },
                     {
                         name:"企业公告",
                         img:"static/home_img/nav_affiche.png",
-                        url:"/"
+                        url:"/profile_announce"
                     }
                 ],
                 "productC":[

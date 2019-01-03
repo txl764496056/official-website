@@ -7,9 +7,26 @@ let Random = Mock.Random;
 Mock.mock(url.news,{
     "newsList|10":[
         {
+            "id": "@increment",
             "imgSrc|1":["static/home_img/a2.png","static/mayi.jpg"],
             "title|1":"@ctitle(3,15)",
-            "content":"@cparagraph()",
+            "content":"@cparagraph(3,20)",
+            "time":"@now()"
+        }
+    ]
+});
+
+// 企业公告
+Mock.mock(url.announce,{
+    "announce|10":[
+        {
+            "id": "@increment",
+            "title|1":"@ctitle(3,15)",
+            "content":"@cparagraph(3,20)",
+            "imgSrc|1":[
+                "static/shake_hands2.jpg",
+                "static/shake_hands.jpg"
+            ],
             "time":"@now()"
         }
     ]
@@ -20,13 +37,14 @@ Mock.mock(url.producterCenterList,{
     "producterCenterList|9":[
         {
             "id": "@increment",
-            "title":"@ctitle(3,15)",
+            "title":"@ctitle(5,45)",
             "imgSrc|1":[
                 "static/shake_hands2.jpg",
                 "static/shake_hands.jpg"
             ],
-            "content|3":"@cparagraph(3,4)",
-            "time":"@date()"
+            "content":"@cparagraph(3,20)",
+            "time":"@date()",
+            "num|1-1000":2
         }
     ]
 });
@@ -35,9 +53,11 @@ Mock.mock(url.producterCenterList,{
 Mock.mock(url.mallList,{
     "mallList|4":[
         {
+            "id": "@increment",
             "type":false,
             "imgSrc|1":["static/mall_img/image1.jpg","static/mall_img/image2.jpg","static/mall_img/image3.jpg","static/mall_img/image4.jpg"],
             "title|1":"@ctitle(3,15)",
+            "content":"@cparagraph(3,20)",
             "price|1-200.2":55,
             "details|1":"@ctitle(3,30)"
         }
@@ -74,16 +94,24 @@ Mock.mock(url.profileCulture,{
     ]
 });
 
-// 文章详情
-// Mock.mock(url.pageDetails,{
-//     "pageDetails|1":[{
-//         "imgSrc|1":["static/home_img/a2.png","static/mayi.jpg"],
-//         "title|1":title(3,25),
-//         "content":Random.cparagraph(),
-//         "time":Random.now(),
-//         "readNum|1-500":33
-//     }]
-// });
+// 产业布局信息
+Mock.mock(url.dismsg,{
+    "dismsg|1":[{
+        "imgSrc|1":["static/home_img/a2.png","static/mayi.jpg"],
+        "content":"@cparagraph(3,25)",
+        "address|4":[
+            {
+                "area|1":"@region()",
+                "PCD|1":"@county(true)"
+            }
+        ]
+    }]
+});
+
+// 荣誉证书
+Mock.mock(url.honors,{
+    "honors|3":["static/mayi.jpg","static/shake_hands2.jpg","static/shake_hands.jpg"]
+});
 
 // 随机title
 // function title(n,m){

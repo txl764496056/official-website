@@ -13,8 +13,10 @@ import ProfileIndex from "@/views/profile_index" //企业简介首页
 import companyCulturePhotos from "@/views/company_culture_photos" //企业文化照片墙
 import cultureIndex from "@/views/culture_index" //企业文化首页
 import viewDetails from "@/views/view_details" //详情页
-// import profileLayout from "@/views/profile_layout" //页面A
-// import profileHonor from "@/views/profile_honor" //页面B
+import ProfileLayout from "@/views/profile_layout" //产业布局
+import ProfileHonor from "@/views/profile_honor" //企业荣誉
+import ProfileAnnounce from "@/views/profile_announce" //企业公告
+import MallDetails from "@/views/mall_details" //商品详情
 
 
 Vue.use(Router)
@@ -50,9 +52,41 @@ export default new Router({
           path:"/",
           redirect:"/profile_index"
         },
+        {
+          path:"/profile_layout",
+          name:"profile_layout",
+          component:ProfileLayout,
+          meta:{
+            title:"产业布局"
+          }
+        },
+        {
+          path:"/profile_honor",
+          name:"profile_honor",
+          component:ProfileHonor,
+          meta:{
+            title:"企业荣誉"
+          }
+        },
+        {
+          path:"/profile_announce",
+          component:ProfileAnnounce,
+          meta:{
+            title:"企业公告"
+          },
+          children:[
+            {
+              path:"/announce_details",
+              name:"announce_details",
+              component:viewDetails,
+              meta:{
+                title:"公告详情"
+              }
+            }
+          ]
+        },
         { 
           path:"/profile_culture",
-          // name:"profile_culture",
           component:ProfileCulture,
           meta:{
             title:"企业文化"
@@ -90,11 +124,20 @@ export default new Router({
     },
     {
       path:"/news",
-      name:"news",
       component:News,
       meta:{
         title:"新闻资讯"
-      }
+      },
+      children:[
+        {
+          path:"/news_details",
+          name:"news_details",
+          component:viewDetails,
+          meta:{
+            title:"新闻详情"
+          }
+        }
+      ]
     },
     {
       path:"/product_center",
@@ -115,11 +158,20 @@ export default new Router({
     },
     {
       path:"/mall",
-      name:"mall",
       component:Mall,
       meta:{
         title:"商城"
-      }
+      },
+      children:[
+        {
+          path:"/mall_details",
+          name:"mall_details",
+          component:MallDetails,
+          meta:{
+            title:"商品详情"
+          }
+        }
+      ]
     },
     {
       path:"/download",

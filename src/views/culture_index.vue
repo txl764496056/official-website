@@ -1,6 +1,6 @@
 <template>
     <div>
-        <title1 class="culture-title wow animated fadeInDown" titleEN="公司企业文化建设，员工万众一心" titleCN="企业文化"></title1>
+        <title1 class="page-title wow animated fadeInDown" titleEN="公司企业文化建设，员工万众一心" titleCN="企业文化"></title1>
         <!-- 列表 start -->
         <div class="company-details clear wow animated zoomIn">
             <div class="details-l scale">
@@ -101,8 +101,6 @@ export default {
 }
 </script>
 <style scoped>
-.culture-title{margin:30px 0 50px;}
-
 .company-details{margin-top:40px;}
 .details-l,.details-r{float: left;}
 .details-l{width:500px;}

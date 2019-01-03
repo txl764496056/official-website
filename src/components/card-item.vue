@@ -4,7 +4,7 @@
             <img v-if="imgSrc!=''" :src="imgSrc" alt="">
         </div>
         <div class="item-img-title">
-            <p>{{title}}</p>
+            <p>{{title.length>10 ? title.substr(0,17) : title}}</p>
         </div>
     </div>
 </template>
@@ -32,7 +32,7 @@ export default {
 .item-img img{ width: 100%;height: 100%;vertical-align: middle;transition:transform 0.3s;}
 .item-img:hover img{transform: scale(1.1);}
 .item-img-title{height: 70px;background-color: #fff;line-height: 70px;position: relative;z-index: 10;}
-.item-img-title p{color:#333;font-size: 16px;padding:0 20px;position: relative;z-index: 20}
+.item-img-title p{color:#333;font-size: 16px;padding:0 20px;position: relative;z-index: 20;text-align:left;}
 .item-img-title:before{content:"";display: inline-block;position: absolute;z-index: 15;background-color: #0099ff;width:0;transition:width 0.5s;height: 100%;left:0;}
 .item:hover .item-img img{filter: contrast(110%) brightness(110%);} 
 .item:hover .item-img-title:before{width:100%;}

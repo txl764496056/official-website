@@ -4,7 +4,8 @@
         <div v-show="isShow" id="product-center">
             <div class="container">
                 <div class="product-list clear">
-                    <router-link v-for="(item,index) in cardList" :key="index"  :to="{name:'view_details',params:{index:item.id}}">
+                    <!-- id:列表元素id号，index：列表项在数组中的索引 -->
+                    <router-link v-for="(item,index) in cardList" :key="index"  :to="{name:'view_details',params:{id:item.id,index:index}}">
                         <card-item :title="item.title" :imgSrc="item.imgSrc"></card-item>
                     </router-link>
                 </div>

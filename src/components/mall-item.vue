@@ -7,13 +7,17 @@
             <h2>{{itemMsg.title}}</h2>
             <span>￥<b>{{itemMsg.price}}</b></span>
             <p>{{itemMsg.details}}</p>
-            <a href="/">立即查看</a>
+            <!-- <a :href="/">立即查看</a> -->
+            <router-link :to="path">立即查看</router-link>
         </div>
     </div>
 </template>
 <script>
 export default {
     props:{
+        path:{
+            default:"/"
+        },
         itemMsg:{
             default:function(){
                 return {

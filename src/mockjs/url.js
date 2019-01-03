@@ -3,7 +3,9 @@ var url = {
     producterCenterList:'data/producterCenterList',
     mallList:"data/mallList",
     profileCulture:"data/profileCulture",
-    // pageDetails:"data/pageDetails",
+    dismsg:"data/dismsg",
+    honors:"data/honors",
+    announce:"data/announce",
     install(Vue,options){
         Vue.prototype.$url = url;
     }

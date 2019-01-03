@@ -1,7 +1,7 @@
 <template>
     <div class="item">
-        <div class="item-img">
-            <img v-if="itemMsg.imgSrc!=''" :src="itemMsg.imgSrc" alt="">
+        <div v-show="itemMsg.imgSrc" class="item-img">
+            <img  :src="itemMsg.imgSrc" alt="">
         </div>
         <div class="item-con">
             <h2>{{itemMsg.title}}</h2>
@@ -59,7 +59,7 @@ export default {
 .item{font-size: 0;text-align:left;display: flex;display: -webkit-flex;padding:20px;box-shadow: 0 1px 5px rgba(100,100,100,0.1);background-color: #fff;align-content:center;align-items:center;margin-bottom: 20px;transition:transform 0.1s;}
 .item-img{width:240px;text-align: center;display: inline-block;height: 140px;background-color:#eee;}
 .item-img img{width: 100%;height: 100%;vertical-align: top;}
-.item-con{width:780px;padding:0 20px;display: inline-block;}
+.item-con{width:780px;padding:0 20px;display: inline-block;flex:1}
 .item-con h2{text-overflow:ellipsis;white-space:nowrap;overflow: hidden;font-size: 20px;color:#333;font-weight: normal;}
 .item-con p{color:#828a92;-webkit-line-clamp:4;display: -webkit-box;overflow:hidden;-webkit-box-orient:vertical;text-align: justify;margin-top: 13px;line-height: 25px;}
 .item-time{width:140px;text-align: center;display: inline-block;vertical-align: top;}
