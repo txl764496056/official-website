@@ -5,65 +5,100 @@
             <page-banner title='联系我们' customClass="contract-banner" content="往下可以轻松的联系我们哦"></page-banner>
         </a>
         <!-- banner end -->
-        <div id="contract-us" class="contract-type container">
-            <contact-item title="公司地址"></contact-item>
-            <contact-item title="联系方式" bgColor="bg-color2">
-                <slot>
-                    <p>联系电话：0755-85000090</p>
-					<p>E-mail: admin@8888i.com</p>
-					<p>QQ:160939872</p>
-                </slot>
-            </contact-item>
-            <contact-item title="微信公众号" bgColor="bg-color3">
-                <slot>
-                    <img class="web-code" src="static/webchat_code.png" alt="">
-                </slot>
-            </contact-item>
-        </div>
-        <div class="message-map clear container">
-            <div class="message">
-                <h2>在线提交您的留言</h2>
-                <div class="mes-unit clear">
-                    <label for="name">您的称呼:</label>
-                    <input type="text" placeholder="请输入您的称呼">
-                    <span>*</span>
+        <div v-show="isShow">
+            <div id="contract-us" class="contract-type container">
+                <contact-item title="公司地址"></contact-item>
+                <contact-item title="联系方式" bgColor="bg-color2">
+                    <slot>
+                        <p>联系电话：0755-85000090</p>
+                        <p>E-mail: admin@8888i.com</p>
+                        <p>QQ:160939872</p>
+                    </slot>
+                </contact-item>
+                <contact-item title="微信公众号" bgColor="bg-color3">
+                    <slot>
+                        <img class="web-code" src="static/webchat_code.png" alt="">
+                    </slot>
+                </contact-item>
+            </div>
+            <div class="message-map clear container">
+                <div class="message">
+                    <h2>在线提交您的留言</h2>
+                    <div class="mes-unit clear">
+                        <label for="name">您的称呼:</label>
+                        <input type="text" placeholder="请输入您的称呼">
+                        <span>*</span>
+                    </div>
+                    <div class="mes-unit clear">
+                        <label for="name">您的电话:</label>
+                        <input type="text" placeholder="请输入您的电话">
+                        <span>*</span>
+                    </div>
+                    <div class="mes-unit mes-con clear">
+                        <label for="name">留言内容:</label>
+                        <textarea type="text" placeholder="请输入您的留言"></textarea>
+                        <b>0/300</b>
+                    </div>
+                    <div class="mes-btn">
+                        <button>提交</button>
+                    </div>
                 </div>
-                <div class="mes-unit clear">
-                    <label for="name">您的电话:</label>
-                    <input type="text" placeholder="请输入您的电话">
-                    <span>*</span>
-                </div>
-                <div class="mes-unit mes-con clear">
-                    <label for="name">留言内容:</label>
-                    <textarea type="text" placeholder="请输入您的留言"></textarea>
-                    <b>0/300</b>
-                </div>
-                <div class="mes-btn">
-                    <button>提交</button>
+                <div class="map">
+                    <h2>在线地图</h2>
+                    <div class="map-img">
+                        <img src="static/map.jpg" alt="">
+                    </div>
                 </div>
             </div>
-            <div class="map">
-                <h2>在线地图</h2>
-                <div class="map-img">
-                    <img src="static/map.jpg" alt="">
-                </div>
-            </div>
         </div>
+        <bread-tab class="container bread-tab" v-show="!isShow" :itemMsg="tabMsg"></bread-tab>
+        <router-view/>
     </div>
 </template>
 <script>
 import pageBanner from '../components/page-banner' //内页banner
 import contactItem from '../components/contract-item' //联系方式
+import router from '../router'
+import breadTab from "../components/bread-tab" //面包屑导航
 export default {
     components:{
+        "bread-tab":breadTab,
         "page-banner":pageBanner,
         "contact-item":contactItem
     },
     data:function(){
         return {
+            isShow:true
         }
     },
+    created:function(){
+        this.breadTab();
+    },
     methods:{
+        breadTab:function(){
+            let curr = router.history.current;
+            let currpath = curr.path; //当前路径
+            let matched = curr.matched; //所有历史记录
+            let arr = []; //存放历史路径的title和path
+            if(currpath!='/contract'){
+                this.isShow = false;
+            }else{
+                this.isShow = true;
+            }
+            // 从历史记录中筛选出需要的数据
+            arr = matched.map(function(item,index){ //获取每级路由的路径和title
+                return {
+                        title:item.meta.title || "",
+                        path:item.path
+                    }
+            });
+            this.tabMsg = arr;
+        }
+    },
+    watch:{
+        "$route"(to,from){
+            this.breadTab();
+        }
     }
 }
 </script>

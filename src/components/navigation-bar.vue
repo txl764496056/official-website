@@ -127,7 +127,7 @@ export default {
                      {
                         name:"招贤纳士",
                         img:"static/home_img/nav_recruit.png",
-                        url:"/"
+                        url:"/invite"
                     }
                 ]
             }

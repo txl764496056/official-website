@@ -17,7 +17,7 @@ import ProfileLayout from "@/views/profile_layout" //产业布局
 import ProfileHonor from "@/views/profile_honor" //企业荣誉
 import ProfileAnnounce from "@/views/profile_announce" //企业公告
 import MallDetails from "@/views/mall_details" //商品详情
-
+import Invite from "@/views/invite" //商品详情
 
 Vue.use(Router)
 
@@ -183,11 +183,20 @@ export default new Router({
     },
     {
       path:"/contract",
-      name:"contract",
       component:Contract,
       meta:{
         title:"联系我们"
-      }
+      },
+      children:[
+          {
+            path:"/invite",
+            name:"invite",
+            component:Invite,
+            meta:{
+              title:"招贤纳士"
+            }
+          }
+        ]
     }
   ]
 })
