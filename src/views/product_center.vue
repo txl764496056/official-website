@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="product-list clear">
                     <!-- id:列表元素id号，index：列表项在数组中的索引 -->
-                    <router-link v-for="(item,index) in cardList" :key="index" :to="{name:'view_details2',params:{id:item.id,index:index}}">
+                    <router-link v-for="(item,index) in cardList" :key="index" :to="{name:'view_details2',query:{id:item.id,index:index}}">
                         <card-item :title="item.title" :imgSrc="item.imgSrc"></card-item>
                     </router-link>
                 </div>

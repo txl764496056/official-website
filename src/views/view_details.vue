@@ -28,12 +28,12 @@
     </div>
 </template>
 <script>
-
 import axios from "axios"
+import router from '../router'
 export default {
     data:function(){
-        return {
-            msgList:[],
+        return { 
+            msgList:[], //所有列表项数据，实现上一篇 下一篇效果
             currPageId:0,
             currpage:{},
             index:0, //当前文章索引
@@ -41,13 +41,26 @@ export default {
             nextIndex:0 //下一篇文章索引
         }
     },
+    beforeRouteLeave:function(to,from,next){
+        // 离开当前页面时，删除数据
+        sessionStorage.removeItem("viewDetailsList");
+        sessionStorage.removeItem("index");
+        next();
+    },
     created:function(){
-        this.msgList = this.viewDetailsList;
-        // 1、被点击列表项的id，在详情页显示对应的详细信息
-        this.currPageId = this.$route.params.id;
-        // 2、文章索引值
-        this.pageIndex(this.$route.params.index);
-        // 3、获取与currPageId对应的文章信息
+        // 1、将数据存入sessionStorage,刷新当前页面时备用
+        if(!sessionStorage.viewDetailsList){
+            sessionStorage.setItem("viewDetailsList",JSON.stringify(this.viewDetailsList));
+            sessionStorage.index = this.$route.query.index; //当前页在列表中的索引值
+        }
+        this.msgList = JSON.parse(sessionStorage.getItem("viewDetailsList"));
+        this.index = parseInt(sessionStorage.getItem("index"));
+
+        // 2、被点击列表项的id，在详情页显示对应的详细信息
+        this.currPageId = this.$route.query.id;
+        // 3、文章索引值，上一篇、下一篇、当前篇 的索引值
+        this.pageIndex(this.index);
+        // 4、获取与currPageId对应的文章信息
         this.getPage(this.currPageId,this.msgList);
      },
      methods:{

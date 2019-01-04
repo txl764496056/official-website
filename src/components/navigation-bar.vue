@@ -96,33 +96,33 @@ export default {
                         url:"/profile_announce"
                     }
                 ],
-                "productC":[
-                    {
-                        name:"发现",
-                        img:"static/home_img/nav_find.png",
-                        url:"/"
-                    },
-                    {
-                        name:"汇聊",
-                        img:"static/home_img/nav_chat.png",
-                        url:"/"
-                    },
-                    {
-                        name:"通讯",
-                        img:"static/home_img/nav_call.png",
-                        url:"/"
-                    },
-                    {
-                        name:"直播",
-                        img:"static/home_img/nav_live.png",
-                        url:"/"
-                    },
-                    {
-                        name:"我的",
-                        img:"static/home_img/nav_my.png",
-                        url:"/"
-                    }
-                ],
+                // "productC":[
+                //     {
+                //         name:"发现",
+                //         img:"static/home_img/nav_find.png",
+                //         url:"/"
+                //     },
+                //     {
+                //         name:"汇聊",
+                //         img:"static/home_img/nav_chat.png",
+                //         url:"/"
+                //     },
+                //     {
+                //         name:"通讯",
+                //         img:"static/home_img/nav_call.png",
+                //         url:"/"
+                //     },
+                //     {
+                //         name:"直播",
+                //         img:"static/home_img/nav_live.png",
+                //         url:"/"
+                //     },
+                //     {
+                //         name:"我的",
+                //         img:"static/home_img/nav_my.png",
+                //         url:"/"
+                //     }
+                // ],
                 "contract":[
                      {
                         name:"招贤纳士",

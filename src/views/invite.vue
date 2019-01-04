@@ -8,7 +8,7 @@
                 <img src="static/contractus_img/JOIN-US.png" alt="">
             </div>
             <div class="employ-intro-txt home-p3">
-                汇能科技团队是由一群快乐的、有激情的、脚踏实地的年轻人组成，一起为了梦想而奋斗~<br/>
+                由一群快乐的、有激情的、脚踏实地的年轻人组成，一起为了梦想而奋斗~<br/>
                 我们向往自由，无论是宽松的管理体制还是融洽的同事关系……<br/>
                 我们热爱生活，无论是去滑雪还是爬山还是野外拓展训练……<br/>
                 我们追求极致，无论是理想还是实现自我价值……<br/>
@@ -19,17 +19,17 @@
                 汇能科技都期待您的到来，期待您的加入<br/>
             </div>
         </div>
-        <!-- <div class="employ-pos">
+        <div class="employ-pos">
             <h2 class="employ-p1 wow animated">招聘职位</h2>
             <div class="pos-type wow animated zoomIn">
-                <a href="#" class="scrollTo" data-pos="总经理">总经理</a>
-                <a href="#pos-ios" class="scrollTo" data-pos="高级iOS开发工程师">高级iOS开发工程师</a>
-                <a href="#pos-java" class="scrollTo" data-pos="JAVA工程师">JAVA工程师</a>
-                <a href="#" class="scrollTo" data-pos="分公司总经理">分公司总经理</a>
-                <a href="#pos-php" class="scrollTo" data-pos="PHP工程师">PHP工程师</a>
-                <a href="#" class="scrollTo" data-pos="大客户总监">大客户总监</a>
-                <a href="#" class="scrollTo" data-pos="出纳">出纳</a>
-                <a href="#" class="scrollTo" data-pos="域渠道拓展总监">域渠道拓展总监</a>
+                <a href="#" @click="scrollTo()" data-pos="总经理">总经理</a>
+                <a href="#pos-ios" @click="scrollTo()" data-pos="高级iOS开发工程师">高级iOS开发工程师</a>
+                <a href="#pos-java" @click="scrollTo()" data-pos="JAVA工程师">JAVA工程师</a>
+                <a href="#" @click="scrollTo()" data-pos="分公司总经理">分公司总经理</a>
+                <a href="#pos-php" @click="scrollTo()" data-pos="PHP工程师">PHP工程师</a>
+                <a href="#" @click="scrollTo()" data-pos="大客户总监">大客户总监</a>
+                <a href="#" @click="scrollTo()" data-pos="出纳">出纳</a>
+                <a href="#" @click="scrollTo()" data-pos="域渠道拓展总监">域渠道拓展总监</a>
             </div>
             <div class="pos-item" id="pos-java">
                 <hr>
@@ -89,9 +89,9 @@
                 <p>8、对缓存系统Memcache, redis等有一定的使用经验；</p>
                 <p>9、有钻研精神， 对未知的领域有深入探索，学习的激情；</p>
                 <p>10、快速学习，了解业界最新动态，不断提升自我；</p>
-                <p>11、热爱旅游, 热爱摄影优先考虑。
+                <p>11、热爱旅游, 热爱摄影优先考虑。</p>
             </div>
-		</div> -->
+		</div>
     </div>
 </template>
 <script>
@@ -114,7 +114,7 @@ export default {
 .employ-img img{max-width: 100%;}
 .employ-intro-txt{width: 840px;display: inline-block;}
 .employ-intro-txt.home-p3{line-height: 40px;}
-.employ-pos{margin-top: 30px;padding:50px 0;position: relative;z-index: 10;}
+.employ-pos{margin-top: 30px;padding:50px 0;position: relative;z-index: 10;text-align:left;}
 .employ-pos:before{content:"WE NEED YOU";color:#f1f1f1;font-size: 76px;letter-spacing: 2px;position: absolute;left:90px;font-weight: bold;z-index: 15;display: inline-block;top:-7px;}
 .employ-p1{font-size: 20px;font-weight: bold;color:#333; z-index: 20;position: relative;}
 .employ-p2{font-size: 16px;color:#333;font-weight: bold;margin: 20px 0 10px 0;}

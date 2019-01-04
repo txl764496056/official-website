@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="product-list clear">
                     <!-- id:列表元素id号，index：列表项在数组中的索引 -->
-                    <router-link v-for="(item,index) in cardList" :key="index"  :to="{name:'view_details',params:{id:item.id,index:index}}">
+                    <router-link v-for="(item,index) in cardList" :key="index"  :to="{name:'view_details',query:{id:item.id,index:index}}">
                         <card-item :title="item.title" :imgSrc="item.imgSrc"></card-item>
                     </router-link>
                 </div>
@@ -31,6 +31,7 @@
 import axios from "axios"
 import cardItem from "../components/card-item" //卡片样式
 import title1 from '../components/title1' //标题
+import router from '../router'
 export default {
     components:{
         "card-item":cardItem,
@@ -46,6 +47,7 @@ export default {
     },
     mounted:function(){
         this.getData();
+        this.show();
     },
     methods:{
         handleSizeChange:function(){
@@ -66,11 +68,22 @@ export default {
             }).catch((res)=>{
                 console.log(res,"error");
             });
+        },
+        show:function(){
+            let curr = router.history.current;
+            let currpath = curr.path; //当前路径
+            let matched = curr.matched; //所有历史记录
+            let arr = []; //存放历史路径的title和path
+            if(currpath!='/profile_announce'){
+                this.isShow = false;
+            }else{
+                this.isShow = true;
+            }
         }
     },
     watch:{
         "$route"(to,from){
-            this.isShow = !this.isShow;
+            this.show();
         }
     }
 }

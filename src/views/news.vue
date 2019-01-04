@@ -9,7 +9,7 @@
             <!-- 列表 start -->
             <div  id="news-content">
                 <div class="container">
-                    <router-link v-for="(item,index) in newsList" :key="index" :to="{name:'news_details',params:{id:item.id,index:index}}">
+                    <router-link v-for="(item,index) in newsList" :key="index" :to="{name:'news_details',query:{id:item.id,index:index}}">
                         <news-list-item :itemMsg="item"></news-list-item>
                     </router-link>
                 </div>

@@ -5,54 +5,56 @@
             <page-banner title='联系我们' customClass="contract-banner" content="往下可以轻松的联系我们哦"></page-banner>
         </a>
         <!-- banner end -->
-        <div v-show="isShow">
-            <div id="contract-us" class="contract-type container">
-                <contact-item title="公司地址"></contact-item>
-                <contact-item title="联系方式" bgColor="bg-color2">
-                    <slot>
-                        <p>联系电话：0755-85000090</p>
-                        <p>E-mail: admin@8888i.com</p>
-                        <p>QQ:160939872</p>
-                    </slot>
-                </contact-item>
-                <contact-item title="微信公众号" bgColor="bg-color3">
-                    <slot>
-                        <img class="web-code" src="static/webchat_code.png" alt="">
-                    </slot>
-                </contact-item>
-            </div>
-            <div class="message-map clear container">
-                <div class="message">
-                    <h2>在线提交您的留言</h2>
-                    <div class="mes-unit clear">
-                        <label for="name">您的称呼:</label>
-                        <input type="text" placeholder="请输入您的称呼">
-                        <span>*</span>
+        <div id="contract-us">
+            <div v-show="isShow">
+                <div id="contract-us" class="contract-type container">
+                    <contact-item title="公司地址"></contact-item>
+                    <contact-item title="联系方式" bgColor="bg-color2">
+                        <slot>
+                            <p>联系电话：0755-85000090</p>
+                            <p>E-mail: admin@8888i.com</p>
+                            <p>QQ:160939872</p>
+                        </slot>
+                    </contact-item>
+                    <contact-item title="微信公众号" bgColor="bg-color3">
+                        <slot>
+                            <img class="web-code" src="static/webchat_code.png" alt="">
+                        </slot>
+                    </contact-item>
+                </div>
+                <div class="message-map clear container">
+                    <div class="message">
+                        <h2>在线提交您的留言</h2>
+                        <div class="mes-unit clear">
+                            <label for="name">您的称呼:</label>
+                            <input type="text" placeholder="请输入您的称呼">
+                            <span>*</span>
+                        </div>
+                        <div class="mes-unit clear">
+                            <label for="name">您的电话:</label>
+                            <input type="text" placeholder="请输入您的电话">
+                            <span>*</span>
+                        </div>
+                        <div class="mes-unit mes-con clear">
+                            <label for="name">留言内容:</label>
+                            <textarea type="text" placeholder="请输入您的留言"></textarea>
+                            <b>0/300</b>
+                        </div>
+                        <div class="mes-btn">
+                            <button>提交</button>
+                        </div>
                     </div>
-                    <div class="mes-unit clear">
-                        <label for="name">您的电话:</label>
-                        <input type="text" placeholder="请输入您的电话">
-                        <span>*</span>
-                    </div>
-                    <div class="mes-unit mes-con clear">
-                        <label for="name">留言内容:</label>
-                        <textarea type="text" placeholder="请输入您的留言"></textarea>
-                        <b>0/300</b>
-                    </div>
-                    <div class="mes-btn">
-                        <button>提交</button>
+                    <div class="map">
+                        <h2>在线地图</h2>
+                        <div class="map-img">
+                            <img src="static/map.jpg" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="map">
-                    <h2>在线地图</h2>
-                    <div class="map-img">
-                        <img src="static/map.jpg" alt="">
-                    </div>
-                </div>
             </div>
+            <bread-tab class="container bread-tab" v-show="!isShow" :itemMsg="tabMsg"></bread-tab>
+            <router-view/>
         </div>
-        <bread-tab class="container bread-tab" v-show="!isShow" :itemMsg="tabMsg"></bread-tab>
-        <router-view/>
     </div>
 </template>
 <script>

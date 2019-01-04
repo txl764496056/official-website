@@ -169,7 +169,7 @@ export default {
         }
     },
     mounted:function(){
-        // $(".list").css({"border":"1px solid #ff0000"});
+        
     }
 }
 </script>
